@@ -1,8 +1,8 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { Link } from 'react-aria-components';
-import { SectionLabel } from '@/components/ui/SectionLabel';
+import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
 import styles from './Contact.module.scss';
 
 export const Contact: React.FC = () => {

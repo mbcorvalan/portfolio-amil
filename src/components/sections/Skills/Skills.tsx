@@ -1,7 +1,7 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
-import { SectionLabel } from '@/components/ui/SectionLabel';
+import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
 import { skills } from '@/lib/data';
 import styles from './Skills.module.scss';
 

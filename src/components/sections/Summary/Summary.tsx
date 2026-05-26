@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import styles from './Hero.module.scss';
+import styles from '../Hero/Hero.module.scss';
 import summaryStyles from './Summary.module.scss';
 
 
