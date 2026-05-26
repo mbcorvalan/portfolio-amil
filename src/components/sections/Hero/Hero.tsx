@@ -9,7 +9,12 @@ export const Hero: React.FC = () => {
     <section id="hero" className={styles.hero} aria-labelledby="hero-title">
       <header className={styles.topbar}>
         <div className={styles.topbarLeft} />
-        <span className={styles.topbarInfo}>Maria Belen Corvalan Amil · Buenos Aires, Argentina</span>
+        <span className={styles.topbarInfo}>
+          <span className={styles.topbarNameFull}>Maria Belen Corvalan Amil</span>
+          <span className={styles.topbarSeparator}>{' · '}</span>
+          <span className={styles.topbarLocationFull}>Buenos Aires, Argentina</span>
+          <span className={styles.topbarLocationShort}>AR</span>
+        </span>
         <nav className={styles.topbarRight} aria-label="Main navigation">
           <Link href="#contact" className={styles.topbarLink}>Contact</Link>
           <Link href="#about" className={styles.topbarLink}>About Me</Link>
