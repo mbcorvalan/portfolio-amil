@@ -1,0 +1,37 @@
+@use '@/styles/variables' as *;
+
+.section {
+}
+
+.inner {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.paragraph {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: $fg-secondary;
+  margin: 0;
+}
+
+@media (max-width: $bp-md) {
+  .inner {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .inner {
+    padding: 24px 16px;
+  }
+}

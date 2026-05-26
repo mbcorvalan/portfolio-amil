@@ -1,0 +1,85 @@
+@use '@/styles/variables' as *;
+
+.section {
+}
+
+.inner {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  gap: 24px;
+}
+
+.year {
+  font-size: 12px;
+  color: $fg-subtle;
+  min-width: 80px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+.company {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e8e8e8;
+  margin-bottom: 2px;
+}
+
+.role {
+  font-size: 13px;
+  color: $fg-secondary;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 13px;
+  color: $fg-tertiary;
+  line-height: 1.6;
+}
+
+@media (max-width: $bp-md) {
+  .inner {
+    padding: 32px 20px;
+  }
+
+  .item {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .year {
+    min-width: unset;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .inner {
+    padding: 24px 16px;
+  }
+
+  .company {
+    font-size: 14px;
+  }
+
+  .desc {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,380 @@
+@use '@/styles/variables' as *;
+
+$ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 65vh;
+  background: $bg;
+  overflow: hidden;
+  padding: 20px 36px 46px;
+}
+
+/* ── Summary Section ── */
+.summarySection {
+  position: relative;
+  width: 100%;
+  padding: 30px 36px;
+  background: $bg;
+}
+
+.summaryContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Topbar ── */
+.topbar {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.topbarLeft {
+  display: flex;
+}
+
+.topbarInfo {
+  justify-self: center;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: rgb(85, 85, 85);
+}
+
+.topbarRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+}
+
+.topbarLink {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $fg-tertiary;
+  text-decoration: none;
+  outline: none;
+  transition: color 0.15s;
+
+  &[data-hovered] {
+    color: $fg-muted;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ── Big AMIL ── */
+.wordmark {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  top: 24.5%;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4.1vw;
+  line-height: 0.78;
+  pointer-events: none;
+  margin: 0;
+}
+
+.letterMask {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+.letter {
+  position: relative;
+  display: block;
+  font-size: clamp(250px, 28vw, 510px);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  color: #ededed;
+  transform: translateY(115%);
+  animation: revealLetter 1.2s $ease forwards;
+}
+
+.letterA {
+  animation-delay: 0.05s;
+}
+
+.letterM {
+  animation-delay: 0.18s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4%;
+    left: 48%;
+    width: clamp(8px, 0.85vw, 16px);
+    height: 116%;
+    background: $bg;
+    transform: rotate(-22deg);
+    transform-origin: center;
+    z-index: 2;
+  }
+}
+
+.letterI {
+  animation-delay: 0.31s;
+}
+
+.letterL {
+  animation-delay: 0.44s;
+}
+
+@keyframes revealLetter {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ── Bottom row ── */
+.heroBottom {
+  position: absolute;
+  right: 36px;
+  bottom: 120px;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 32px;
+}
+
+/* ── Role card ── */
+.roleCard {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.01);
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 0.85s $ease 0.8s forwards;
+}
+
+.roleLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: $fg-tertiary;
+}
+
+.roleTitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $fg;
+  margin: 0;
+}
+
+.roleDetail {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: $fg-tertiary;
+}
+
+/* ── Meta description ── */
+.meta {
+  text-align: right;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 0.85s $ease 0.9s forwards;
+}
+
+.metaDescription {
+  max-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  color: $fg-tertiary;
+  text-align: right;
+}
+
+.metaItem {
+  font-size: 16px;
+  font-family: var(--font-mono), monospace;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $fg-tertiary;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+
+// Large desktop — subtle letter adjustment
+@media (max-width: $bp-xl) {
+  .wordmark {
+    top: 27%;
+    gap: 3vw;
+  }
+
+  .letter {
+    font-size: clamp(200px, 26vw, 420px);
+  }
+}
+
+// Tablet landscape / small laptop
+@media (max-width: $bp-lg) {
+  .wordmark {
+    top: 28%;
+    gap: 2vw;
+  }
+
+  .letter {
+    font-size: clamp(150px, 24vw, 300px);
+  }
+
+  .heroBottom {
+    left: 28px;
+    right: 28px;
+  }
+}
+
+@media (max-width: $bp-md) {
+  .hero {
+    min-height: 60svh;
+    padding: 24px 24px 32px;
+  }
+
+  .topbarLocation,
+  .topbarName {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .topbarRight {
+    gap: 16px;
+  }
+
+  .wordmark {
+    top: 34%;
+    left: -10px;
+    right: -18px;
+    gap: 1.5vw;
+  }
+
+  .letter {
+    font-size: clamp(90px, 22vw, 170px);
+  }
+
+  .heroBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: 28px;
+    left: 24px;
+    right: auto;
+    gap: 14px;
+  }
+
+  .roleCard {
+    width: 100%;
+  }
+
+  .meta {
+    text-align: left;
+  }
+
+  .metaDescription {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .hero {
+    padding: 20px 16px 24px;
+  }
+
+  .topbarLocation {
+    font-size: 9px;
+  }
+
+  .topbarName {
+    font-size: 10px;
+  }
+
+  .topbarRight {
+    gap: 12px;
+  }
+
+  .wordmark {
+    top: 38%;
+    left: -6px;
+    right: -10px;
+  }
+
+  .letter {
+    font-size: clamp(68px, 20vw, 100px);
+  }
+
+  .heroBottom {
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .roleCard {
+    padding: 12px 14px;
+  }
+
+  .roleTitle {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .roleLine {
+    margin-bottom: 8px;
+  }
+
+  .roleDetail {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+
+  .metaItem {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+}

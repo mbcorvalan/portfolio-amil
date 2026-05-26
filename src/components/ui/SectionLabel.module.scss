@@ -1,0 +1,16 @@
+@use '@/styles/variables' as *;
+
+.label {
+  font-size: 11px;
+  color: $fg-subtle;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+@media (max-width: $bp-sm) {
+  .label {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,31 @@
+@use '@/styles/variables' as *;
+
+@media (max-width: 768px) {
+  .btn {
+    display: none;
+  }
+}
+
+.btn {
+  position: fixed;
+  left: 32px;
+  bottom: 48px;
+  z-index: 50;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $fg-tertiary;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transition: color 0.2s;
+
+  &:hover {
+    color: $fg-muted;
+  }
+}

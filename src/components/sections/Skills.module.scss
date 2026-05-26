@@ -1,0 +1,42 @@
+@use '@/styles/variables' as *;
+
+.section {
+}
+
+.inner {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+  background: rgb(17, 17, 17);
+  border: 0.5px solid rgb(42, 42, 42);
+  border-radius: 4px;
+  padding: 6px 14px;
+}
+
+@media (max-width: $bp-md) {
+  .inner {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .inner {
+    padding: 24px 16px;
+  }
+
+  .skill {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+}
