@@ -4,24 +4,105 @@
 }
 
 .inner {
-  max-width: $content-max;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px 32px;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.carousel {
+  position: relative;
+  outline: none;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px $fg-subtle;
+    border-radius: $radius;
+  }
 }
 
-.skill {
+.viewport {
+  overflow: hidden;
+  border-radius: $radius;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 24px 0 28px;
+}
+
+.categoryLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $fg-muted;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $border;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
   font-size: 12px;
-  color: rgb(136, 136, 136);
-  background: rgb(17, 17, 17);
-  border: 0.5px solid rgb(42, 42, 42);
+  color: $fg-tertiary;
+  background: $bg-secondary;
+  border: 0.5px solid $border-subtle;
   border-radius: 4px;
-  padding: 6px 14px;
+  padding: 5px 12px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $fg-subtle;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+
+  &:focus-visible {
+    outline: 2px solid $fg-muted;
+    outline-offset: 3px;
+  }
+}
+
+.dotActive {
+  background: $fg;
+  transform: scale(1.4);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (max-width: $bp-md) {
@@ -35,8 +116,8 @@
     padding: 24px 16px;
   }
 
-  .skill {
+  .pill {
     font-size: 11px;
-    padding: 5px 12px;
+    padding: 4px 10px;
   }
 }

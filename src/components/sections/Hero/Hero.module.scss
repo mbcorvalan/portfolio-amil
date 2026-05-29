@@ -21,7 +21,17 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
 .summaryContainer {
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  color: $fg;
 }
 
 /* ── Topbar ── */
@@ -265,13 +275,17 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
 // Tablet landscape / small laptop
 @media (max-width: $bp-lg) {
+  .hero {
+    min-height: 50svh;
+  }
+
   .wordmark {
     top: 28%;
     gap: 2vw;
   }
 
   .letter {
-    font-size: clamp(150px, 24vw, 300px);
+    font-size: clamp(120px, 20vw, 250px);
   }
 
   .heroBottom {
@@ -280,10 +294,32 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
 
+@media (max-width: $bp-lg) {
+  .summaryContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .meta {
+    text-align: center;
+  }
+
+  .metaDescription {
+    text-align: center;
+  }
+}
+
 @media (max-width: $bp-md) {
   .hero {
-    min-height: 42svh;
+    min-height: 34svh;
     padding: 24px 24px 32px;
+  }
+
+  .summarySection {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .topbarInfo {
@@ -303,7 +339,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .letter {
-    font-size: clamp(90px, 22vw, 170px);
+    font-size: clamp(68px, 18vw, 130px);
   }
 
   .heroBottom {
@@ -325,14 +361,19 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   .metaDescription {
     max-width: 100%;
-    text-align: left;
+    text-align: center;
   }
 }
 
 @media (max-width: $bp-sm) {
   .hero {
-    min-height: 36svh;
+    min-height: 28svh;
     padding: 20px 16px 24px;
+  }
+
+  .summarySection {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .topbarRight {
@@ -346,7 +387,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .letter {
-    font-size: clamp(68px, 20vw, 100px);
+    font-size: clamp(52px, 17vw, 80px);
   }
 
   .heroBottom {

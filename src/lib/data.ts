@@ -1,4 +1,4 @@
-import { Experience, Skill } from '@/types';
+import { AboutData, Experience, HeroData, Skill, SummaryData } from '@/types';
 
 export const experiences: Experience[] = [
   {
@@ -43,15 +43,36 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const skills: string[] = [
-  'React',
-  'Next.js',
-  'Angular',
-  'TypeScript',
-  'JavaScript',
-  'CSS / Tailwind',
-  'Node.js',
-  'Git',
-  'Testing',
-  'Figma',
+export const hero: HeroData = {
+  name: 'Maria Belen Corvalan Amil',
+  location: 'Buenos Aires, Argentina',
+  locationShort: 'AR',
+};
+
+export const summary: SummaryData = {
+  tagline: 'Senior Developer · AI & Automation',
+  description: '6+ years building scalable, user-centered apps. Focused on architecture, accessibility & performance, leveraging AI and automation to ship faster and smarter.',
+};
+
+export const about: AboutData = {
+  paragraphs: [
+    'Developer with 6+ years of experience building scalable, accessible, and user-centered digital products. I specialize in frontend architecture, performance optimization, modern testing practices, and creating consistent experiences across different frameworks complemented by backend development and database integration.',
+    'I enjoy solving technical challenges through thoughtful collaboration, clean implementation, and a strong focus on quality. I actively use AI tools to automate processes, accelerate development workflows, and ship better products faster.',
+    "Beyond technology, I'm passionate about football and animals.",
+  ],
+};
+
+export const skills: Skill[] = [
+  {
+    category: 'Development',
+    items: ['React', 'Next.js', 'Angular', 'TypeScript', 'JavaScript', 'CSS', 'Node.js / Express', 'GraphQL', 'PostgreSQL', 'MongoDB', 'SQL'],
+  },
+  {
+    category: 'AI & Automation',
+    items: ['Cursor / Copilot / Claude', 'Prompt Engineering', 'OpenAI & Anthropic API', 'n8n / Make / Zapier', 'GitHub Actions', 'Node.js Scripting'],
+  },
+  {
+    category: 'Tooling & Workflow',
+    items: ['Git', 'Figma', 'Node.js', 'Storybook', 'Testing', 'CI/CD'],
+  },
 ];

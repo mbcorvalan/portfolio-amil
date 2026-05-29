@@ -5,16 +5,42 @@ import styles from './BackToTop.module.scss';
 
 export const BackToTop: React.FC = () => {
   const handleClick = () => {
-    const start = window.scrollY;
-    const duration = 1200;
-    const startTime = performance.now();
-    const ease = (t: number) => 1 - Math.pow(1 - t, 3);
-    const step = (now: number) => {
-      const elapsed = Math.min((now - startTime) / duration, 1);
-      window.scrollTo(0, start * (1 - ease(elapsed)));
-      if (elapsed < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
+    // Primary: try window
+    try {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (e) {
+      try {
+        window.scrollTo(0, 0);
+      } catch (_) {}
+    }
+
+    // Try document.scrollingElement / root
+    const root = document.scrollingElement || document.documentElement || document.body;
+    try {
+      // @ts-ignore
+      root.scrollTo && root.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (e) {
+      try {
+        // @ts-ignore
+        root.scrollTop = 0;
+      } catch (_) {}
+    }
+
+    // Fallback: scroll any scrollable containers on the page
+    try {
+      const els = Array.from(document.querySelectorAll<HTMLElement>('*')).filter((el) => {
+        const cs = getComputedStyle(el);
+        return (cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight;
+      });
+
+      els.forEach((el) => {
+        try {
+          el.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (e) {
+          el.scrollTop = 0;
+        }
+      });
+    } catch (e) {}
   };
 
   return (

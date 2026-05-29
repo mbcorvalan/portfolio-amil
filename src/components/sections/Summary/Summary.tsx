@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { summary } from '@/lib/data';
 import styles from '../Hero/Hero.module.scss';
 import summaryStyles from './Summary.module.scss';
 
@@ -9,13 +10,9 @@ export const Summary: React.FC = () => {
   return (
     <section id="summary" className={styles.summarySection}>
       <div className={styles.summaryContainer}>
+        <p className={styles.tagline}>{summary.tagline}</p>
         <aside className={styles.meta} aria-label="Professional summary">
-          <p className={styles.metaDescription}>
-            <strong>Senior Frontend Developer</strong> with more than
-            6+ years building scalable, user-centered apps.
-            Focused on architecture, accessibility & performance.
-            Working with AI to improve and accelerate development workflows.
-          </p>
+          <p className={styles.metaDescription}>{summary.description}</p>
         </aside>
       </div>
       <div className={summaryStyles.discoverWrapper}>

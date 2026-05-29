@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-aria-components';
+import { hero } from '@/lib/data';
 import styles from './Hero.module.scss';
 
 export const Hero: React.FC = () => {
@@ -10,10 +11,10 @@ export const Hero: React.FC = () => {
       <header className={styles.topbar}>
         <div className={styles.topbarLeft} />
         <span className={styles.topbarInfo}>
-          <span className={styles.topbarNameFull}>Maria Belen Corvalan Amil</span>
+          <span className={styles.topbarNameFull}>{hero.name}</span>
           <span className={styles.topbarSeparator}>{' · '}</span>
-          <span className={styles.topbarLocationFull}>Buenos Aires, Argentina</span>
-          <span className={styles.topbarLocationShort}>AR</span>
+          <span className={styles.topbarLocationFull}>{hero.location}</span>
+          <span className={styles.topbarLocationShort}>{hero.locationShort}</span>
         </span>
         <nav className={styles.topbarRight} aria-label="Main navigation">
           <Link href="#contact" className={styles.topbarLink}>Contact</Link>
@@ -36,6 +37,7 @@ export const Hero: React.FC = () => {
           <span className={`${styles.letter} ${styles.letterL}`} aria-hidden="true">L</span>
         </span>
       </h1>
+
 
     </section>
   );

@@ -27,3 +27,18 @@ export interface ContactForm {
   email: string;
   message: string;
 }
+
+export interface AboutData {
+  paragraphs: string[];
+}
+
+export interface SummaryData {
+  tagline: string;
+  description: string;
+}
+
+export interface HeroData {
+  name: string;
+  location: string;
+  locationShort: string;
+}
