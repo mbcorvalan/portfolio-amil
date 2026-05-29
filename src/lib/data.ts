@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     id: '1',
     title: 'Senior Frontend Developer',
-    company: 'Acsys',
+    company: 'Hexaware Technologies',
     period: '2024 — Present',
     description: 'Developing scalable, accessible UI components for EY Motif using React and Angular. Contributing to frontend architecture, CI/CD practices, and performance optimization.',
     skills: ['React', 'Angular', 'TypeScript', 'CI/CD'],
@@ -50,7 +50,7 @@ export const hero: HeroData = {
 };
 
 export const summary: SummaryData = {
-  tagline: 'Senior Developer · AI & Automation',
+  tagline: 'Senior Software Developer',
   description: '6+ years building scalable, user-centered apps. Focused on architecture, accessibility & performance, leveraging AI and automation to ship faster and smarter.',
 };
 
