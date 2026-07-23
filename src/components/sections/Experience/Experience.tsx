@@ -15,7 +15,8 @@ export const Experience: React.FC = () => {
             <li key={exp.id} className={styles.item}>
               <div className={styles.year}>{exp.period}</div>
               <div className={styles.content}>
-                <p className={styles.company}>{exp.title}</p>
+                <p className={styles.company}>{exp.company}</p>
+                <p className={styles.role}>{exp.title}</p>
                 <p className={styles.desc}>{exp.description}</p>
               </div>
             </li>

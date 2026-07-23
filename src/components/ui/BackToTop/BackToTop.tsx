@@ -1,9 +1,20 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './BackToTop.module.scss';
 
+const SHOW_AFTER_PX = 600;
+
 export const BackToTop: React.FC = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > SHOW_AFTER_PX);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const handleClick = () => {
     // Primary: try window
     try {
@@ -44,7 +55,13 @@ export const BackToTop: React.FC = () => {
   };
 
   return (
-    <button onClick={handleClick} className={styles.btn} aria-label="Back to top">
+    <button
+      onClick={handleClick}
+      className={`${styles.btn} ${visible ? styles.visible : ''}`}
+      aria-label="Back to top"
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
+    >
       Back to top
     </button>
   );

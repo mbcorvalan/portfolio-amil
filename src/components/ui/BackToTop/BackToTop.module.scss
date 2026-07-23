@@ -23,7 +23,14 @@
   color: $fg-tertiary;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  transition: color 0.2s;
+  transition: color 0.2s, opacity 0.25s ease;
+  opacity: 0;
+  pointer-events: none;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   &:hover {
     color: $fg-muted;

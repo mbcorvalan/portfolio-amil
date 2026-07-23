@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
 import { skills } from '@/lib/data';
 import styles from './Skills.module.scss';
@@ -10,15 +10,28 @@ const INTERVAL = 5000;
 export const Skills: React.FC = () => {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (paused || reducedMotion) return;
+    if (!inView || paused || reducedMotion) return;
     const id = setInterval(() => {
       setActive(p => (p + 1) % skills.length);
     }, INTERVAL);
     return () => clearInterval(id);
-  }, [paused]);
+  }, [inView, paused]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowRight') {
@@ -31,7 +44,7 @@ export const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className={styles.section}>
+    <section id="skills" className={styles.section} ref={sectionRef}>
       <div className={styles.inner}>
         <SectionLabel>Skills</SectionLabel>
         <div
