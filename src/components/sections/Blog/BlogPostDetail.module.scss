@@ -134,6 +134,16 @@
   color: $fg-secondary;
 }
 
+.inlineCode {
+  font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  color: $fg-bright;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid $border-light;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
 .figure {
   margin: 8px 0;
 }

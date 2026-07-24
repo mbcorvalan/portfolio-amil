@@ -9,6 +9,15 @@ import styles from './BlogPostDetail.module.scss';
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
+const renderInlineText = (text: string): React.ReactNode =>
+  text.split(/(`[^`]+`)/g).map((part, i) =>
+    part.startsWith('`') && part.endsWith('`') ? (
+      <code key={i} className={styles.inlineCode}>{part.slice(1, -1)}</code>
+    ) : (
+      part
+    ),
+  );
+
 const renderBlock = (block: BlogContentBlock, key: number): React.ReactNode => {
   switch (block.type) {
     case 'heading': {
@@ -17,15 +26,15 @@ const renderBlock = (block: BlogContentBlock, key: number): React.ReactNode => {
       return <Tag key={key} className={className}>{block.text}</Tag>;
     }
     case 'paragraph':
-      return <p key={key} className={styles.paragraph}>{block.text}</p>;
+      return <p key={key} className={styles.paragraph}>{renderInlineText(block.text)}</p>;
     case 'note':
-      return <p key={key} className={styles.note}>{block.text}</p>;
+      return <p key={key} className={styles.note}>{renderInlineText(block.text)}</p>;
     case 'list': {
       const ListTag = block.ordered ? 'ol' : 'ul';
       return (
         <ListTag key={key} className={styles.list}>
           {block.items.map((item, i) => (
-            <li key={i} className={styles.listItem}>{item}</li>
+            <li key={i} className={styles.listItem}>{renderInlineText(item)}</li>
           ))}
         </ListTag>
       );
@@ -35,7 +44,7 @@ const renderBlock = (block: BlogContentBlock, key: number): React.ReactNode => {
         <figure key={key} className={styles.figure}>
           {block.src ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={block.src} alt={block.caption} className={styles.image} />
+            <img src={block.src} alt={block.alt} className={styles.image} />
           ) : (
             <div className={styles.imagePlaceholder} aria-hidden="true">
               <ImageIcon size={22} strokeWidth={1.5} />
