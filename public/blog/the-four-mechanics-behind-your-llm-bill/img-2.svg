@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="60%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.75" y="0.75" width="1198.5" height="673.5" rx="16" fill="url(#bg)" stroke="#333333" stroke-width="1.5"/>
+<text x="150" y="90" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="15" font-weight="400" fill="#808080" text-anchor="start" letter-spacing="2" opacity="1">DAILY → MONTHLY</text><text x="330" y="320" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="60" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">$73.50</text><text x="330" y="362" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#808080" text-anchor="middle" letter-spacing="0" opacity="1">per day</text><text x="870" y="320" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="60" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">~$2,205</text><text x="870" y="362" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#808080" text-anchor="middle" letter-spacing="0" opacity="1">per month</text><path d="M 460 250 L 746 250" stroke="#808080" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M 738 242 L 760 250 L 738 258" fill="none" stroke="#808080" stroke-width="2"/>
+  <text x="610" y="228" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="20" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">× 30 DAYS</text>
+</svg>

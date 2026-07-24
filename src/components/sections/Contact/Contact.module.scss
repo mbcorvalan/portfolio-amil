@@ -35,6 +35,34 @@
   }
 }
 
+.cvButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  padding: 12px 22px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $fg;
+  text-decoration: none;
+  border: 1px solid $border-light;
+  border-radius: $radius;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+
+  &:hover {
+    color: $bg;
+    background: $fg;
+    border-color: $fg;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 3px;
+  }
+}
+
 @media (max-width: $bp-md) {
   .inner {
     padding: 32px 20px;
@@ -43,6 +71,10 @@
   .row {
     flex-direction: column;
     gap: 14px;
+  }
+
+  .cvButton {
+    width: 100%;
   }
 }
 

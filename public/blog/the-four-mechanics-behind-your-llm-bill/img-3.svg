@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="60%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.75" y="0.75" width="1198.5" height="673.5" rx="16" fill="url(#bg)" stroke="#333333" stroke-width="1.5"/>
+<text x="150" y="90" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="15" font-weight="400" fill="#808080" text-anchor="start" letter-spacing="2" opacity="1">STATIC VS VARIABLE INPUT</text><g transform="rotate(-90 600 300)">
+    <circle cx="600" cy="300" r="150" fill="none" stroke="#242424" stroke-width="40"/>
+    <circle cx="600" cy="300" r="150" fill="none" stroke="#f0f0f0" stroke-width="40" stroke-dasharray="914.2034621946298 28.274333882308156" stroke-linecap="round"/>
+  </g>
+  <text x="600" y="314" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="48" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">97%</text>
+  <text x="600" y="510" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="2" opacity="1">IDENTICAL EVERY CALL</text>
+  <text x="600" y="536" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#808080" text-anchor="middle" letter-spacing="0" opacity="1">97% of input tokens</text>
+</svg>

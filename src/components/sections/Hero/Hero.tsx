@@ -1,27 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Link } from 'react-aria-components';
-import { hero } from '@/lib/data';
+import { Header } from '@/components/ui/Header/Header';
 import styles from './Hero.module.scss';
 
 export const Hero: React.FC = () => {
   return (
     <section id="hero" className={styles.hero} aria-labelledby="hero-title">
-      <header className={styles.topbar}>
-        <div className={styles.topbarLeft} />
-        <span className={styles.topbarInfo}>
-          <span className={styles.topbarNameFull}>{hero.name}</span>
-          <span className={styles.topbarSeparator}>{' · '}</span>
-          <span className={styles.topbarLocationFull}>{hero.location}</span>
-          <span className={styles.topbarLocationShort}>{hero.locationShort}</span>
-        </span>
-        <nav className={styles.topbarRight} aria-label="Main navigation">
-          <Link href="#contact" className={styles.topbarLink}>Contact</Link>
-          <Link href="#about" className={styles.topbarLink}>About Me</Link>
-          <a href="/files/maria_belen_corvalan_amil.pdf" download="maria_belen_corvalan_amil.pdf" className={styles.topbarLink}>Download CV</a>
-        </nav>
-      </header>
+      <Header variant="home" />
 
       <h1 className={styles.wordmark} id="hero-title" aria-label="AMIL">
         <span className={styles.letterMask}>

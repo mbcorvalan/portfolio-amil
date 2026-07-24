@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="60%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.75" y="0.75" width="1198.5" height="673.5" rx="16" fill="url(#bg)" stroke="#333333" stroke-width="1.5"/>
+<text x="150" y="90" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="15" font-weight="400" fill="#808080" text-anchor="start" letter-spacing="2" opacity="1">COST AT 2 CALLS · RELATIVE UNITS</text><line x1="150" y1="560" x2="1050" y2="560" stroke="#333333" stroke-width="1.5"/><rect x="260" y="140" width="200" height="420" rx="6" fill="#3a3a3a"/><text x="360" y="122" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="27" font-weight="700" fill="#e8e8e8" text-anchor="middle" letter-spacing="0" opacity="1">2.00</text><text x="360" y="594" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="17" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="0" opacity="1">No caching</text><rect x="740" y="276.5" width="200" height="283.5" rx="6" fill="#f0f0f0"/><text x="840" y="258.5" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="27" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">1.35</text><text x="840" y="594" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="17" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="0" opacity="1">With caching</text><path d="M 460 220 L 726 220" stroke="#808080" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M 718 212 L 740 220 L 718 228" fill="none" stroke="#808080" stroke-width="2"/>
+  <text x="600" y="198" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="20" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">-32%</text>
+</svg>

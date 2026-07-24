@@ -1,4 +1,4 @@
-import { AboutData, Experience, HeroData, Skill, SummaryData } from '@/types';
+import { AboutData, BlogPost, Experience, HeroData, Skill, SummaryData } from '@/types';
 
 export const experiences: Experience[] = [
   {
@@ -45,7 +45,7 @@ export const experiences: Experience[] = [
 
 export const hero: HeroData = {
   name: 'Maria Belen Corvalan Amil',
-  location: 'Buenos Aires, Argentina',
+  location: 'Bs As, Argentina',
   locationShort: 'AR',
 };
 
@@ -60,6 +60,144 @@ export const about: AboutData = {
     'I enjoy solving technical challenges through thoughtful collaboration, clean implementation, and a strong focus on quality. I actively use AI tools to automate processes, accelerate development workflows, and ship better products faster.',
   ],
 };
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: 'the-four-mechanics-behind-your-llm-bill',
+    title: 'The Four Mechanics Behind Your LLM Bill',
+    dek: 'Why the rate card doesn\'t predict what you pay',
+    excerpt: 'Four mechanics the pricing page doesn\'t describe — cache economics, quadratic context growth, tokenizer drift, and why output costs 5x more than input.',
+    date: '2026-07-24',
+    readTime: '9 min read',
+    tags: ['LLM Pricing', 'Cost Optimization'],
+    coverImage: '/blog/the-four-mechanics-behind-your-llm-bill/thumb.svg',
+    content: [
+      { type: 'note', text: 'All figures are illustrative estimates from a hypothetical scenario, using published Anthropic rates as of July 2026. Your numbers will differ.' },
+      { type: 'paragraph', text: 'Consider a CV screener: it takes a résumé, extracts structured fields, scores the candidate against a role, and writes a short justification.' },
+      { type: 'paragraph', text: 'Nothing exotic. This is what an LLM feature looks like inside any HR product.' },
+      { type: 'image', id: 'img-1', caption: 'Request breakdown: 7,200 input / 1,500 output', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-1.svg' },
+      { type: 'paragraph', text: 'At 1,000 CVs a day on Opus 4.8:' },
+      { type: 'image', id: 'img-2', caption: 'Daily and monthly cost: $73.50/day → ~$2,205/month', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-2.svg' },
+      { type: 'paragraph', text: '$2,205 a month. That\'s the number the rate card gives you. Hold onto it.' },
+
+      { type: 'heading', level: 2, text: '01 — Cache Break-Even' },
+      { type: 'heading', level: 3, text: 'The problem' },
+      { type: 'paragraph', text: 'The Claude API is stateless. Every request is independent, so you resend everything, every time.' },
+      { type: 'image', id: 'img-3', caption: 'What repeats: 97% identical every call', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-3.svg' },
+      { type: 'paragraph', text: '97% of your input is the same text on every request. At 1,000 CVs a day that\'s $35/day for text Anthropic has already read 999 times.' },
+
+      { type: 'heading', level: 3, text: 'The solution' },
+      { type: 'paragraph', text: 'Prompt caching tells Anthropic: this prefix never changes, store it processed, reuse it next time. You mark where the stable part ends:' },
+      { type: 'image', id: 'img-4', caption: 'Breakpoint: cache_control in system block', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-4.svg' },
+      { type: 'paragraph', text: 'Everything above the breakpoint gets cached. Everything below is priced normally.' },
+
+      { type: 'heading', level: 3, text: 'The trap' },
+      { type: 'paragraph', text: 'There isn\'t one cache price. There are three.' },
+      { type: 'image', id: 'img-5', caption: 'Rates on Opus 4.8: 1.0× / 1.25× / 0.1×', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-5.svg' },
+      { type: 'paragraph', text: 'Writing the cache costs more than not caching. You pay a 25% premium once to pay 90% less afterward — an investment with a payback period, not a discount.' },
+      { type: 'image', id: 'img-6', caption: 'Break-even is 2 calls: 1.35 vs 2.00', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-6.svg' },
+      { type: 'paragraph', text: 'Three more worth knowing:' },
+      {
+        type: 'list', items: [
+          'The 1-hour cache costs 2.0× to write — it needs 3+ hits to pay off. At 2 calls it\'s worse than not caching.',
+          'Anything variable above the breakpoint kills it. A ${new Date()} means zero hits and a 25% surcharge on every call.',
+          'The failure is silent. Check response.usage.cache_read_input_tokens — if it stays at 0, nothing will tell you.',
+        ],
+      },
+
+      { type: 'heading', level: 3, text: 'Back to the screener' },
+      { type: 'image', id: 'img-7', caption: 'Before $73.50/day → After ~$42/day', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-7.svg' },
+      { type: 'paragraph', text: 'One line of config. 43% off the bill.' },
+      { type: 'paragraph', text: 'What\'s left: output is untouched at $37.50/day — now 89% of the total. That\'s Block 04\'s problem.' },
+
+      { type: 'heading', level: 2, text: '02 — Quadratic Resend' },
+      { type: 'heading', level: 3, text: 'The problem' },
+      { type: 'paragraph', text: 'Block 01 assumed one call per CV. That\'s not how agents work.' },
+      { type: 'paragraph', text: 'The moment your screener uses tools — fetch the role, query the ATS, look up salary bands — you\'re in a loop. And every turn resends the entire conversation.' },
+      { type: 'image', id: 'img-8', caption: 'Turn growth: A / AB / ABC / ABCD', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-8.svg' },
+
+      { type: 'heading', level: 3, text: 'The trap' },
+      { type: 'paragraph', text: 'Costs don\'t grow with the conversation. They grow with the square of it.' },
+      { type: 'image', id: 'img-9', caption: '10 turns = 55 units, 20 = 210, 30 = 465', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-9.svg' },
+      { type: 'paragraph', text: 'Ten turns of content, 55 units on the invoice. That\'s n(n+1)/2.' },
+      { type: 'paragraph', text: 'And the units aren\'t small. Tool results are the heaviest thing in an agent\'s context — a single ATS response can be 3,000 tokens of JSON, paid for on every subsequent turn.' },
+      {
+        type: 'list', items: [
+          'Thinking tokens count too — extended thinking stays in context and gets resent at input rates.',
+          'This is usually the dominant cost in agent work, not the model tier. Teams downgrade Opus to Sonnet and wonder why the bill barely moves.',
+        ],
+      },
+
+      { type: 'heading', level: 3, text: 'Back to the screener' },
+      { type: 'paragraph', text: 'Same base, now a 15-turn agent averaging 1,500 tokens of tool results per turn:' },
+      { type: 'image', id: 'img-10', caption: 'Naive ~$127/day vs caching + pruning ~$58/day', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-10.svg' },
+      { type: 'paragraph', text: 'These swing widely with how much your tool results weigh. Two things fix it: cache the stable prefix and prune tool results you\'re done with. A salary lookup from turn 3 doesn\'t need to be in context on turn 14.' },
+
+      { type: 'heading', level: 2, text: '03 — Tokenizer Drift' },
+      { type: 'heading', level: 3, text: 'The problem' },
+      { type: 'paragraph', text: 'You don\'t pay per character. You pay per token — and how text splits into tokens is a property of the model, not of your text.' },
+
+      { type: 'heading', level: 3, text: 'The trap' },
+      { type: 'paragraph', text: 'Anthropic changed the tokenizer in Opus 4.7. Same text, up to 35% more tokens.' },
+      { type: 'image', id: 'img-11', caption: 'Per CV: 1,000 tokens vs 1,350 tokens, +35%', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-11.svg' },
+      { type: 'paragraph', text: 'The rate card says $5.00/MTok in both cases. Your bill goes up 35% anyway.' },
+      { type: 'paragraph', text: 'Everyone compares models by price per million tokens. Nobody asks how many tokens the same text produces. It\'s an invisible variable that breaks every price comparison.' },
+      {
+        type: 'list', items: [
+          'It hits Spanish, code, and proper nouns hardest — exactly where tokenizers differ most.',
+          'Migrations are where it bites. You upgrade for quality and inherit a cost increase nobody mentioned in the changelog.',
+        ],
+      },
+
+      { type: 'heading', level: 3, text: 'Back to the screener' },
+      { type: 'paragraph', text: 'Before switching versions, run 50 real CVs through both and compare usage.input_tokens. Twenty minutes, and it\'s the only way to know what a migration costs.' },
+      { type: 'image', id: 'img-12', caption: 'At daily scale: $36.00 → $48.60, +$12.60/day', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-12.svg' },
+      { type: 'paragraph', text: '$380/month for changing a version string.' },
+
+      { type: 'heading', level: 2, text: '04 — The 5× Rule' },
+      { type: 'heading', level: 3, text: 'The pattern' },
+      { type: 'paragraph', text: 'Across every workhorse tier, output costs exactly 5× input.' },
+      { type: 'image', id: 'img-13', caption: 'Rate card: Haiku $1/$5, Sonnet $3/$15, Opus $5/$25', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-13.svg' },
+      { type: 'paragraph', text: 'Know your input price, multiply by five. That\'s the whole rule.' },
+
+      { type: 'heading', level: 3, text: 'The trap' },
+      { type: 'image', id: 'img-14', caption: 'Same screener, two sides of the bill', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-14.svg' },
+      { type: 'paragraph', text: 'Output is 17% of your tokens and 51% of your bill.' },
+      { type: 'paragraph', text: 'This inverts where you optimize. Everyone trims the prompt. But cutting 100K input tokens saves $0.50 — cutting 100K output tokens saves $2.50. Output optimization pays 5× more.' },
+      {
+        type: 'list', items: [
+          'Thinking tokens bill as output. Extended thinking without a budget generates thousands of tokens at the most expensive rate on the card.',
+          '"max_tokens" is a cap, not a target — but a verbose prompt will fill it. "Write a brief justification" versus "write a thorough analysis" is a real line item.',
+        ],
+      },
+
+      { type: 'heading', level: 3, text: 'Back to the screener' },
+      { type: 'paragraph', text: 'Ask for structured output instead of prose — a score, five fields, two sentences:' },
+      { type: 'image', id: 'img-15', caption: '1,500 tokens $37.50/day → 600 tokens $15.00/day', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-15.svg' },
+      { type: 'paragraph', text: '$675/month for a tighter output spec.' },
+
+      { type: 'heading', level: 2, text: 'Where the bill actually landed' },
+      { type: 'image', id: 'img-16', caption: '$2,205 → $1,261 → $586, 73% lower', src: '/blog/the-four-mechanics-behind-your-llm-bill/img-16.svg' },
+      { type: 'paragraph', text: 'That\'s a 73% reduction in this scenario, and the model never changed. No downgrade, no quality tradeoff — just four mechanics the pricing page doesn\'t describe.' },
+      { type: 'paragraph', text: 'The order matters, and it\'s the answer to "how do you optimize LLM costs" in an interview:' },
+      {
+        type: 'list', ordered: true, items: [
+          'Pick the cheapest model that clears the quality bar — Haiku is 5× cheaper than Sonnet, 25× cheaper than Opus',
+          'Constrain output — pays 5× more than trimming input',
+          'Manage context — the dominant cost in agent loops',
+          'Cache the stable prefix — 90% off what repeats',
+          'Measure real tokens when you migrate — the rate card doesn\'t tell you',
+        ],
+      },
+      { type: 'paragraph', text: 'Four mechanics: when to cache, how much context you\'re dragging, how many tokens your text actually becomes, and which side of the bill you\'re on.' },
+
+      { type: 'heading', level: 2, text: 'A note on the numbers' },
+      { type: 'note', text: 'Everything here is a worked example, not a benchmark. The screener is hypothetical, the token counts are round numbers chosen to make the arithmetic legible, and the savings are what the arithmetic implies — not measured results from production.' },
+      { type: 'note', text: 'Rates are Anthropic\'s published prices as of July 2026 and will change. Cache multipliers, tokenizer behaviour, and model pricing are documented by Anthropic and are the source of truth over anything here.' },
+      { type: 'note', text: 'The point isn\'t the dollar figures. It\'s the four mechanics, which hold regardless of what the rate card says on the day you read this.' },
+    ],
+  },
+];
 
 export const skills: Skill[] = [
   {

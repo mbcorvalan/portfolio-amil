@@ -42,6 +42,13 @@ export const Contact: React.FC = () => {
             YouTube Channel
           </Link>
         </div>
+        <a
+          href="/files/maria_belen_corvalan_amil.pdf"
+          download="maria_belen_corvalan_amil.pdf"
+          className={styles.cvButton}
+        >
+          Download CV
+        </a>
       </div>
     </section>
   );

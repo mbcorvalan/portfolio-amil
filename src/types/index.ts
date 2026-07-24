@@ -42,3 +42,22 @@ export interface HeroData {
   location: string;
   locationShort: string;
 }
+
+export type BlogContentBlock =
+  | { type: 'paragraph'; text: string }
+  | { type: 'heading'; level: 2 | 3; text: string }
+  | { type: 'list'; items: string[]; ordered?: boolean }
+  | { type: 'image'; id: string; caption: string; src?: string }
+  | { type: 'note'; text: string };
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  dek?: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  coverImage?: string;
+  content: BlogContentBlock[];
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="60%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.75" y="0.75" width="1198.5" height="673.5" rx="16" fill="url(#bg)" stroke="#333333" stroke-width="1.5"/>
+<line x1="150" y1="560" x2="1050" y2="560" stroke="#333333" stroke-width="1.5"/><rect x="210" y="510.3225806451613" width="180" height="49.67741935483871" rx="6" fill="#3a3a3a"/><text x="300" y="492.3225806451613" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="27" font-weight="700" fill="#e8e8e8" text-anchor="middle" letter-spacing="0" opacity="1">55</text><text x="300" y="594" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="17" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="0" opacity="1">10 turns</text><rect x="510" y="370.32258064516134" width="180" height="189.6774193548387" rx="6" fill="#3a3a3a"/><text x="600" y="352.32258064516134" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="27" font-weight="700" fill="#e8e8e8" text-anchor="middle" letter-spacing="0" opacity="1">210</text><text x="600" y="594" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="17" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="0" opacity="1">20 turns</text><rect x="810" y="140" width="180" height="420" rx="6" fill="#f0f0f0"/><text x="900" y="122" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="27" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">465</text><text x="900" y="594" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="17" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="0" opacity="1">30 turns</text><text x="150" y="90" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="15" font-weight="400" fill="#808080" text-anchor="start" letter-spacing="2" opacity="1">INVOICE UNITS · n(n+1)/2</text>
+</svg>

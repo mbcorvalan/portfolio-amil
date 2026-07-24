@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="60%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.75" y="0.75" width="1198.5" height="673.5" rx="16" fill="url(#bg)" stroke="#333333" stroke-width="1.5"/>
+<line x1="150" y1="560" x2="1050" y2="560" stroke="#333333" stroke-width="1.5"/><rect x="180" y="140" width="200" height="420" rx="6" fill="#3a3a3a"/><text x="280" y="122" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="27" font-weight="700" fill="#e8e8e8" text-anchor="middle" letter-spacing="0" opacity="1">$2,205</text><text x="280" y="594" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="17" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="0" opacity="1">Baseline</text><rect x="500" y="319.80952380952385" width="200" height="240.19047619047618" rx="6" fill="#3a3a3a"/><text x="600" y="301.80952380952385" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="27" font-weight="700" fill="#e8e8e8" text-anchor="middle" letter-spacing="0" opacity="1">$1,261</text><text x="600" y="594" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="17" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="0" opacity="1">Cache + pruning</text><rect x="820" y="448.3809523809524" width="200" height="111.6190476190476" rx="6" fill="#f0f0f0"/><text x="920" y="430.3809523809524" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="27" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">$586</text><text x="920" y="594" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="17" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="0" opacity="1">Output constraint</text><rect x="960" y="90" width="140" height="56" rx="28" fill="#f0f0f0"/><text x="1030" y="126" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="24" font-weight="700" fill="#111111" text-anchor="middle" letter-spacing="0" opacity="1">-73%</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="60%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.75" y="0.75" width="1198.5" height="673.5" rx="16" fill="url(#bg)" stroke="#333333" stroke-width="1.5"/>
+<g transform="rotate(-90 380 320)">
+    <circle cx="380" cy="320" r="140" fill="none" stroke="#242424" stroke-width="40"/>
+    <circle cx="380" cy="320" r="140" fill="none" stroke="#f0f0f0" stroke-width="40" stroke-dasharray="149.53981031087415 730.1061326942679" stroke-linecap="round"/>
+  </g>
+  <text x="380" y="334" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="44" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">17%</text>
+  <text x="380" y="530" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="2" opacity="1">TOKENS</text>
+  <text x="380" y="554" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#808080" text-anchor="middle" letter-spacing="0" opacity="1">output share</text><g transform="rotate(-90 820 320)">
+    <circle cx="820" cy="320" r="140" fill="none" stroke="#242424" stroke-width="40"/>
+    <circle cx="820" cy="320" r="140" fill="none" stroke="#f0f0f0" stroke-width="40" stroke-dasharray="448.61943093262244 431.0265120725196" stroke-linecap="round"/>
+  </g>
+  <text x="820" y="334" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="44" font-weight="700" fill="#f0f0f0" text-anchor="middle" letter-spacing="0" opacity="1">51%</text>
+  <text x="820" y="530" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#a0a0a0" text-anchor="middle" letter-spacing="2" opacity="1">COST</text>
+  <text x="820" y="554" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="14" font-weight="400" fill="#808080" text-anchor="middle" letter-spacing="0" opacity="1">output share</text><rect x="470" y="560" width="24" height="24" rx="4" fill="#f0f0f0"/><text x="505" y="579" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="16" font-weight="400" fill="#a0a0a0" text-anchor="start" letter-spacing="0" opacity="1">Output</text><rect x="620" y="560" width="24" height="24" rx="4" fill="#242424" stroke="#333333"/><text x="655" y="579" style="font-family:'SFMono-Regular',Menlo,Consolas,monospace" font-size="16" font-weight="400" fill="#a0a0a0" text-anchor="start" letter-spacing="0" opacity="1">Input</text>
+</svg>
