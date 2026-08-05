@@ -8,34 +8,33 @@ import summaryStyles from './Summary.module.scss';
 
 export const Summary: React.FC = () => {
   return (
-    <section id="summary" className={styles.summarySection}>
+    <section id="summary" className={styles.summarySection} aria-labelledby="summary-title">
       <div className={styles.summaryContainer}>
-        <p className={styles.tagline}>{summary.tagline}</p>
-        <aside className={styles.meta} aria-label="Professional summary">
-          <p className={styles.metaDescription}>{summary.description}</p>
-        </aside>
-      </div>
-      <div className={summaryStyles.discoverWrapper}>
-        <a href="#experience" className={summaryStyles.discoverBtn} aria-label="Go to experience" onClick={e => {
-          e.preventDefault();
-          const target = document.getElementById('experience');
-          if (!target) return;
-          const start = window.scrollY;
-          const end = target.getBoundingClientRect().top + start;
-          const duration = 1400;
-          const startTime = performance.now();
-          const ease = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-          const step = (now: number) => {
-            const elapsed = Math.min((now - startTime) / duration, 1);
-            window.scrollTo(0, start + (end - start) * ease(elapsed));
-            if (elapsed < 1) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-        }}>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M4 7l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </a>
+        <h1 id="summary-title" className={styles.headline}>{summary.headline}</h1>
+        <p className={styles.role}>{summary.role}</p>
+        <p className={styles.subtitle}>{summary.subtitle}</p>
+        <p className={`${styles.description} ${styles.descriptionDesktop}`}>{summary.description}</p>
+        <p className={`${styles.description} ${styles.descriptionMobile}`}>{summary.descriptionMobile}</p>
+        <nav className={summaryStyles.ctaRow} aria-label="Primary actions">
+          <a href="#experience" className={`${summaryStyles.ctaButton} ${summaryStyles.ctaPrimary}`}>
+            View experience
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+          <a href="/files/maria_belen_corvalan_amil.pdf" download className={`${summaryStyles.ctaButton} ${summaryStyles.ctaSecondary}`} aria-label="Download resume (PDF)">
+            Download resume
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 2v7m-3-3l3 3l3-3M3 13h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+          <a href="#contact" className={`${summaryStyles.ctaButton} ${summaryStyles.ctaGhost}`}>
+            Contact me
+          </a>
+          <a href="/blog" className={summaryStyles.ctaLink}>
+            Blog
+          </a>
+        </nav>
       </div>
     </section>
   );

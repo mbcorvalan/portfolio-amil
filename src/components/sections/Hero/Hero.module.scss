@@ -2,84 +2,110 @@
 
 $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
+/* ── Hero + Summary shared background ── */
+.heroGroup {
+  position: relative;
+  background-color: $bg;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 75% 65% at 72% 0%, $accent-glow 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
 .hero {
   position: relative;
+  z-index: 1;
   width: 100%;
-  min-height: 65vh;
-  background: $bg;
-  overflow: hidden;
-  padding: 20px 36px 46px;
+  padding: 20px 36px 24px;
 }
 
 /* ── Summary Section ── */
 .summarySection {
   position: relative;
+  z-index: 1;
   width: 100%;
-  padding: 30px 36px;
-  background: $bg;
+  padding: 30px 36px 80px;
 }
 
 .summaryContainer {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 32px;
+  gap: 14px;
 }
 
-.tagline {
+.headline {
   margin: 0;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: $fg;
+}
+
+.role {
+  margin: 0;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: $accent-bright;
+}
+
+.subtitle {
+  margin: 0 0 4px;
   font-size: 15px;
   font-weight: 400;
-  letter-spacing: 0.07em;
-  color: $fg;
+  letter-spacing: 0.04em;
+  color: $fg-secondary;
+}
+
+.description {
+  margin: 4px 0 0;
+  max-width: 70ch;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: $fg-tertiary;
+}
+
+.descriptionMobile {
+  display: none;
 }
 
 /* ── Topbar ── */
 .topbar {
   position: relative;
   z-index: 10;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, auto) auto;
+  display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: flex-end;
+  gap: 20px;
   padding: 8px 0;
 }
 
-.topbarLeft {
-  display: flex;
-}
-
 .topbarInfo {
-  justify-self: center;
-  min-width: 0;
-  max-width: 100%;
-  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: center;
   font-size: 11px;
   line-height: 1;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $fg-tertiary;
+  color: $fg-bright;
 }
 
-.topbarLocationShort {
-  display: none;
-}
-
-.topbarNameFull,
-.topbarSeparator,
-.topbarLocationFull {
-  display: inline;
-}
-
-.topbarRight {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.topbarPin {
   flex-shrink: 0;
-  gap: 28px;
+  color: $accent-bright;
 }
 
 .topbarLink {
@@ -105,70 +131,6 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
 @keyframes fadeIn {
   to { opacity: 1; }
-}
-
-/* ── Big AMIL ── */
-.wordmark {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  line-height: 0.78;
-  pointer-events: none;
-  margin: clamp(16px, 4vw, 56px) 0 0;
-}
-
-.letterMask {
-  overflow: hidden;
-  display: inline-flex;
-  align-items: flex-end;
-}
-
-.letter {
-  position: relative;
-  display: block;
-  font-size: clamp(250px, 28vw, 510px);
-  font-weight: 700;
-  letter-spacing: -0.075em;
-  color: #ededed;
-  transform: translateY(115%);
-  animation: revealLetter 1.2s $ease forwards;
-}
-
-.letterA {
-  animation-delay: 0.05s;
-}
-
-.letterM {
-  animation-delay: 0.18s;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4%;
-    left: 48%;
-    width: clamp(8px, 0.85vw, 16px);
-    height: 116%;
-    background: $bg;
-    transform: rotate(-22deg);
-    transform-origin: center;
-    z-index: 2;
-  }
-}
-
-.letterI {
-  animation-delay: 0.31s;
-}
-
-.letterL {
-  animation-delay: 0.44s;
-}
-
-@keyframes revealLetter {
-  to {
-    transform: translateY(0);
-  }
 }
 
 /* ── Bottom row ── */
@@ -265,70 +227,36 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
 /* ── Responsive ── */
 
-// Large desktop — subtle letter adjustment
-@media (max-width: $bp-xl) {
-  .letter {
-    font-size: clamp(200px, 26vw, 420px);
-  }
-}
-
 // Tablet landscape / small laptop
 @media (max-width: $bp-lg) {
-  .hero {
-    min-height: 50svh;
-  }
-
-  .letter {
-    font-size: clamp(120px, 20vw, 250px);
-  }
-
   .heroBottom {
     left: 28px;
     right: 28px;
   }
-}
 
-@media (max-width: $bp-lg) {
   .summaryContainer {
-    flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 16px;
   }
 
-  .meta {
-    text-align: center;
-  }
-
-  .metaDescription {
-    text-align: center;
+  .description {
+    max-width: 100%;
   }
 }
 
 @media (max-width: $bp-md) {
   .hero {
-    min-height: 34svh;
-    padding: 24px 24px 32px;
+    padding: 20px 24px 20px;
   }
 
   .summarySection {
     padding-left: 24px;
     padding-right: 24px;
+    padding-bottom: 56px;
   }
 
-  .topbarInfo {
-    display: none;
-  }
-
-
-  .topbarRight {
-    gap: 16px;
-  }
-
-  .letter {
-    font-size: clamp(68px, 18vw, 130px);
-    animation: none;
-    transform: translateY(0);
+  .subtitle {
+    margin-bottom: 16px;
   }
 
   .heroBottom {
@@ -356,21 +284,21 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 
 @media (max-width: $bp-sm) {
   .hero {
-    min-height: 28svh;
-    padding: 20px 16px 24px;
+    padding: 16px 16px 16px;
+  }
+
+  .descriptionDesktop {
+    display: none;
+  }
+
+  .descriptionMobile {
+    display: block;
   }
 
   .summarySection {
     padding-left: 16px;
     padding-right: 16px;
-  }
-
-  .topbarRight {
-    gap: 12px;
-  }
-
-  .letter {
-    font-size: clamp(52px, 17vw, 80px);
+    padding-bottom: 44px;
   }
 
   .heroBottom {

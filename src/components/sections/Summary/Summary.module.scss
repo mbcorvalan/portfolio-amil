@@ -1,5 +1,92 @@
 @use '@/styles/variables' as *;
 
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent-bright;
+    outline-offset: 2px;
+  }
+}
+
+.ctaPrimary {
+  background: $accent;
+  border-color: $accent;
+  color: #fff;
+
+  &:hover {
+    background: $accent-dim;
+    border-color: $accent-dim;
+  }
+}
+
+.ctaSecondary {
+  background: transparent;
+  border-color: $fg-subtle;
+  color: $fg;
+
+  &:hover {
+    border-color: $fg-muted;
+    background: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.ctaGhost {
+  background: transparent;
+  border-color: transparent;
+  color: $fg-tertiary;
+
+  &:hover {
+    color: $fg;
+    background: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 2px;
+  border-bottom: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: $fg-tertiary;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+
+  &:hover {
+    color: $fg;
+    border-color: $fg-subtle;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent-bright;
+    outline-offset: 2px;
+  }
+}
+
 .discoverWrapper {
   display: flex;
   justify-content: center;
@@ -14,5 +101,29 @@
 
   &:hover {
     color: $fg-muted;
+  }
+}
+
+@media (max-width: $bp-lg) {
+  .ctaRow {
+    justify-content: center;
+  }
+}
+
+@media (max-width: $bp-md) {
+  .ctaRow {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .ctaButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ctaLink {
+    justify-content: center;
+    padding: 8px 2px;
   }
 }

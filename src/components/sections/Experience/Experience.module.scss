@@ -49,10 +49,42 @@
   margin-bottom: 6px;
 }
 
+.summary {
+  font-size: 13px;
+  color: $fg-tertiary;
+  line-height: 1.6;
+  max-width: 68ch;
+  margin: 0 0 10px;
+}
+
+.responsibilitiesLabel {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: $fg-secondary;
+  margin: 0 0 6px;
+}
+
+.descList {
+  margin: 0;
+  padding: 0 0 0 18px;
+  list-style: disc;
+}
+
 .desc {
   font-size: 13px;
   color: $fg-tertiary;
   line-height: 1.6;
+  max-width: 68ch;
+  margin-bottom: 6px;
+
+  &::marker {
+    color: $fg-subtle;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: $bp-md) {

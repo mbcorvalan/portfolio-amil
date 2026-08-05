@@ -5,13 +5,18 @@ $fg-bright: #fff;
 $fg-muted: #888;
 $fg-secondary: #888;
 $fg-tertiary: #808080;
-$fg-subtle: #7c7c7c;
+$fg-subtle: #828282;
 $border: #222;
 $border-light: #333;
 $border-subtle: #2a2a2a;
 $radius: 6px;
 $radius-lg: 8px;
 $content-max: 680px;
+
+$accent: #565ae6;
+$accent-bright: #818cf8;
+$accent-dim: #4f52d6;
+$accent-glow: rgba(99, 102, 241, 0.35);
 
 // Breakpoints
 $bp-xl: 1280px;

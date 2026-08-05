@@ -17,7 +17,17 @@ export const Experience: React.FC = () => {
               <div className={styles.content}>
                 <p className={styles.company}>{exp.company}</p>
                 <p className={styles.role}>{exp.title}</p>
-                <p className={styles.desc}>{exp.description}</p>
+                {exp.summary && (
+                  <p className={styles.summary}>{exp.summary}</p>
+                )}
+                {exp.summary && (
+                  <p className={styles.responsibilitiesLabel}>Key responsibilities:</p>
+                )}
+                <ul className={styles.descList}>
+                  {exp.bullets.map((bullet, i) => (
+                    <li key={i} className={styles.desc}>{bullet}</li>
+                  ))}
+                </ul>
               </div>
             </li>
           ))}

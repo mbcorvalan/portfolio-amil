@@ -50,7 +50,8 @@ export const Skills: React.FC = () => {
         <div
           className={styles.carousel}
           role="region"
-          aria-label="Skills"
+          aria-roledescription="carousel"
+          aria-label="Skills, use left and right arrow keys to browse categories"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}

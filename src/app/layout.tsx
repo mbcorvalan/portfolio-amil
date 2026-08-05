@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AMIL",
-  description: "Maria Belén Corvalán Amil, Senior Software Developer based in Buenos Aires, Argentina.",
+  description: "Maria Belén Corvalán Amil, Senior Software Engineer based in Buenos Aires, Argentina.",
 };
 
 export default function RootLayout({

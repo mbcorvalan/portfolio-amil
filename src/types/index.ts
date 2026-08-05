@@ -3,7 +3,8 @@ export interface Experience {
   title: string;
   company: string;
   period: string;
-  description: string;
+  summary?: string;
+  bullets: string[];
   skills: string[];
 }
 
@@ -28,13 +29,12 @@ export interface ContactForm {
   message: string;
 }
 
-export interface AboutData {
-  paragraphs: string[];
-}
-
 export interface SummaryData {
-  tagline: string;
+  headline: string;
+  role: string;
+  subtitle: string;
   description: string;
+  descriptionMobile: string;
 }
 
 export interface HeroData {

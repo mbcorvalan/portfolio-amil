@@ -1,4 +1,4 @@
-import { AboutData, BlogPost, Experience, HeroData, Skill, SummaryData } from '@/types';
+import { BlogPost, Experience, HeroData, Skill, SummaryData } from '@/types';
 
 export const experiences: Experience[] = [
   {
@@ -6,7 +6,16 @@ export const experiences: Experience[] = [
     title: 'Senior Frontend Developer',
     company: 'Hexaware',
     period: '2024 — Present',
-    description: 'Contributing to EY Motif, an enterprise design system used across multiple EY products, building scalable and accessible UI components with React, Angular, TypeScript, and Storybook. Translating Figma specs and design tokens into production-ready components, analyzing React/Web Component migration paths, and applying generative AI to automate code analysis, documentation, and test generation.',
+    summary: 'Working on EY Motif, an enterprise design system supporting multiple EY products.',
+    bullets: [
+      'Scalable frontend architecture and reusable component development.',
+      'Accessible UI components built with React, Angular, TypeScript, and Storybook.',
+      'Design-system consistency across frameworks and product experiences.',
+      'Translation of design specifications and technical requirements into production-ready solutions.',
+      'AI-assisted code analysis, documentation, and test generation.',
+      'CI/CD workflows and reliable release processes.',
+      'Cross-functional collaboration and end-to-end delivery ownership.',
+    ],
     skills: ['React', 'Angular', 'TypeScript', 'Design Systems'],
   },
   {
@@ -14,7 +23,16 @@ export const experiences: Experience[] = [
     title: 'Senior Frontend Developer',
     company: 'Hero Digital',
     period: '2021 — 2024',
-    description: 'Delivered large-scale digital experiences for enterprise clients including Zoom, Jefferson Health, and K. Hovnanian Homes, using React, TypeScript, Storybook, and Adobe Experience Manager (AEM). Built reusable AEM components and e-commerce features, integrated REST APIs and analytics, and implemented Google Analytics tracking across high-traffic platforms.',
+    summary: 'Delivered large-scale digital experiences for enterprise clients, including Zoom, Jefferson Health, and K. Hovnanian Homes.',
+    bullets: [
+      'Scalable frontend architecture and reusable component development.',
+      'Enterprise solutions built with React, TypeScript, Storybook, and Adobe Experience Manager.',
+      'Translation of UX and business requirements into production-ready experiences.',
+      'Development of reusable AEM components and e-commerce functionality.',
+      'REST API and analytics integrations across multiple product lines.',
+      'Google Analytics implementation for high-traffic digital platforms.',
+      'Cross-functional collaboration and end-to-end delivery ownership.',
+    ],
     skills: ['React', 'TypeScript', 'AEM', 'Storybook'],
   },
   {
@@ -22,7 +40,16 @@ export const experiences: Experience[] = [
     title: 'Frontend Developer',
     company: 'TradeHelm, Inc.',
     period: '2020 — 2021',
-    description: 'Built responsive, cross-browser interfaces with React and Angular, translating Figma and UX specs into reusable, maintainable components. Integrated frontend apps with AEM and REST APIs, collaborating closely with backend engineers on data contracts and validation rules.',
+    summary: 'Built responsive and maintainable digital experiences, translating Figma designs and UX requirements into reusable frontend solutions.',
+    bullets: [
+      'Responsive and cross-browser interface development.',
+      'Reusable component development with React and Angular.',
+      'Translation of Figma designs and UX specifications into production-ready experiences.',
+      'Frontend integration with Adobe Experience Manager and REST APIs.',
+      'Collaboration with backend engineers on data contracts and validation rules.',
+      'Troubleshooting integration issues and ensuring reliable data flows.',
+      'Cross-functional collaboration across design, frontend, and backend teams.',
+    ],
     skills: ['React', 'Angular', 'AEM', 'Testing'],
   },
   {
@@ -30,7 +57,16 @@ export const experiences: Experience[] = [
     title: 'Frontend Developer',
     company: 'Cencosud S.A.',
     period: '2018 — 2020',
-    description: 'Redesigned and modernized the Easy Argentina e-commerce platform with React, working across a complex product catalog and resolving usability issues in product discovery, navigation, filters, and product pages. Integrated catalog, pricing, and inventory data into responsive customer-facing interfaces.',
+    summary: 'Redesigned and modernized the Easy Argentina e-commerce platform, improving usability across the customer shopping journey.',
+    bullets: [
+      'Development of responsive e-commerce interfaces with React.',
+      'Modernization of product discovery, navigation, filters, and product detail pages.',
+      'Translation of UX requirements into maintainable, production-ready solutions.',
+      'Integration of catalog, pricing, and inventory data.',
+      'Management of complex product information across customer-facing interfaces.',
+      'Resolution of usability and navigation issues across multiple user journeys.',
+      'Cross-functional collaboration with design, product, and backend teams.',
+    ],
     skills: ['React', 'TypeScript', 'E-commerce'],
   },
   {
@@ -38,27 +74,32 @@ export const experiences: Experience[] = [
     title: 'Software Quality Assurance Analyst',
     company: 'MRM',
     period: '2016 — 2018',
-    description: 'Performed end-to-end QA for web applications through manual, regression, smoke, and automated testing, validating business flows, responsive layouts, and cross-browser compatibility. Built a quality-oriented engineering mindset that carries into current frontend work.',
+    summary: 'Performed end-to-end quality assurance for web applications, helping ensure reliable releases and consistent user experiences across browsers and devices.',
+    bullets: [
+      'Manual, regression, smoke, and automated testing.',
+      'Validation of critical business flows and functional requirements.',
+      'Responsive layout and cross-browser compatibility testing.',
+      'Identification, documentation, and tracking of defects across releases.',
+      'Collaboration with developers and product teams to resolve quality issues.',
+      'Verification of fixes and prevention of regressions.',
+      'Development of a quality-oriented engineering mindset that continues to inform my frontend work.',
+    ],
     skills: ['QA', 'Testing', 'Agile'],
   },
 ];
 
 export const hero: HeroData = {
   name: 'Maria Belen Corvalan Amil',
-  location: 'Bs As, Argentina',
+  location: 'Buenos Aires, Argentina',
   locationShort: 'AR',
 };
 
 export const summary: SummaryData = {
-  tagline: 'Senior Software Developer',
-  description: '8+ years building scalable, user-centered apps. Focused on architecture, accessibility & performance, leveraging AI and automation to ship faster and smarter.',
-};
-
-export const about: AboutData = {
-  paragraphs: [
-    'Developer with 8+ years of experience building scalable, accessible, and user-centered digital products. I specialize in frontend architecture, performance optimization, modern testing practices, and creating consistent experiences across different frameworks complemented by backend development and database integration.',
-    'I enjoy solving technical challenges through thoughtful collaboration, clean implementation, and a strong focus on quality. I actively use AI tools to automate processes, accelerate development workflows, and ship better products faster.',
-  ],
+  headline: 'María Belén Corvalán Amil',
+  role: 'Senior Software Engineer · Frontend Specialist',
+  subtitle: 'Frontend Architecture · TypeScript · React · Angular · Node.js · Generative AI',
+  description: 'I transform complex product and business needs into scalable, accessible, and maintainable software solutions. With 8+ years of frontend experience and strong backend knowledge, I take ownership from technical definition through implementation, testing, deployment, and continuous improvement.',
+  descriptionMobile: 'Senior Frontend Engineer with 8+ years of experience and strong backend knowledge. I build scalable, accessible, and maintainable solutions, taking ownership from technical definition to implementation, testing, deployment, and continuous improvement.',
 };
 
 export const blogPosts: BlogPost[] = [
@@ -201,23 +242,31 @@ export const blogPosts: BlogPost[] = [
 
 export const skills: Skill[] = [
   {
-    category: 'Development',
-    items: ['React', 'Next.js', 'Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Sass', 'Node.js / Express', 'GraphQL', 'PostgreSQL', 'MongoDB', 'SQL'],
+    category: 'Frontend Engineering',
+    items: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Angular', 'Web Components', 'HTML', 'CSS', 'Sass', 'Storybook'],
   },
   {
-    category: 'Architecture & Design Systems',
-    items: ['Design Systems', 'Component Libraries', 'Micro Frontends', 'Design Tokens', 'Responsive Design', 'Adobe Experience Manager (AEM)'],
+    category: 'Frontend Architecture & Design Systems',
+    items: ['Design Systems', 'Component APIs', 'Design Tokens', 'Component Libraries', 'Micro Frontends', 'Accessibility (WCAG)', 'Responsive Design', 'Performance Optimization', 'Adobe Experience Manager (AEM)'],
   },
   {
-    category: 'Quality & Testing',
-    items: ['Unit Testing', 'Regression Testing', 'Test Automation', 'Accessibility Testing (WCAG)', 'Code Reviews'],
+    category: 'Backend & Integrations',
+    items: ['Node.js / Express', 'REST APIs', 'GraphQL'],
   },
   {
-    category: 'AI & Automation',
-    items: ['Cursor / Copilot / Claude', 'Prompt Engineering', 'OpenAI & Anthropic API', 'AI-assisted Development', 'n8n / Make / Zapier', 'GitHub Actions', 'Node.js Scripting'],
+    category: 'Testing & Delivery',
+    items: ['Vitest', 'Jest', 'Cypress', 'Unit & Regression Testing', 'Test Automation', 'CI/CD', 'Code Reviews', 'Azure'],
+  },
+  {
+    category: 'AI Engineering',
+    items: ['Claude API', 'Structured Outputs', 'Tool Use', 'Retrieval', 'Evaluation', 'Prompt Engineering', 'OpenAI & Anthropic API', 'Cursor / Copilot / Claude', 'AI-assisted Development', 'n8n / Make / Zapier', 'GitHub Actions', 'Node.js Scripting'],
+  },
+  {
+    category: 'Data',
+    items: ['PostgreSQL', 'MongoDB', 'SQL'],
   },
   {
     category: 'Tooling & Workflow',
-    items: ['Git', 'Figma', 'Storybook', 'CI/CD', 'Agile/Scrum', 'Jira', 'Google Analytics', 'Performance Optimization'],
+    items: ['Git', 'Figma', 'Agile/Scrum', 'Jira', 'Google Analytics'],
   },
 ];
