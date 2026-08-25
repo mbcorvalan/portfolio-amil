@@ -5,6 +5,7 @@ import { Skills } from '@/components/sections/Skills/Skills';
 import { Contact } from '@/components/sections/Contact/Contact';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { ChatBot } from '@/components/ui/ChatBot/ChatBot';
+import { Footer } from '@/components/ui/Footer/Footer';
 import styles from '@/components/sections/Hero/Hero.module.scss';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Contact />
       <BackToTop />
       <ChatBot />
+      <Footer />
     </main>
   );
 }

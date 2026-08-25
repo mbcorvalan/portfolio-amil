@@ -3,6 +3,7 @@ export interface Experience {
   title: string;
   company: string;
   period: string;
+  location?: string;
   summary?: string;
   bullets: string[];
   skills: string[];

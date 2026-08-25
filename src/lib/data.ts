@@ -6,6 +6,7 @@ export const experiences: Experience[] = [
     title: 'Senior Frontend Developer',
     company: 'Hexaware',
     period: '2024 — Present',
+    location: 'Remote',
     summary: 'Working on EY Motif, an enterprise design system supporting multiple EY products.',
     bullets: [
       'Scalable frontend architecture and reusable component development.',
@@ -23,6 +24,7 @@ export const experiences: Experience[] = [
     title: 'Senior Frontend Developer',
     company: 'Hero Digital',
     period: '2021 — 2024',
+    location: 'Remote',
     summary: 'Delivered large-scale digital experiences for enterprise clients, including Zoom, Jefferson Health, and K. Hovnanian Homes.',
     bullets: [
       'Scalable frontend architecture and reusable component development.',
@@ -40,6 +42,7 @@ export const experiences: Experience[] = [
     title: 'Frontend Developer',
     company: 'TradeHelm, Inc.',
     period: '2020 — 2021',
+    location: 'Remote',
     summary: 'Built responsive and maintainable digital experiences, translating Figma designs and UX requirements into reusable frontend solutions.',
     bullets: [
       'Responsive and cross-browser interface development.',
@@ -57,6 +60,7 @@ export const experiences: Experience[] = [
     title: 'Frontend Developer',
     company: 'Cencosud S.A.',
     period: '2018 — 2020',
+    location: 'On-site',
     summary: 'Redesigned and modernized the Easy Argentina e-commerce platform, improving usability across the customer shopping journey.',
     bullets: [
       'Development of responsive e-commerce interfaces with React.',
@@ -74,6 +78,7 @@ export const experiences: Experience[] = [
     title: 'Software Quality Assurance Analyst',
     company: 'MRM',
     period: '2016 — 2018',
+    location: 'On-site',
     summary: 'Performed end-to-end quality assurance for web applications, helping ensure reliable releases and consistent user experiences across browsers and devices.',
     bullets: [
       'Manual, regression, smoke, and automated testing.',
@@ -96,10 +101,10 @@ export const hero: HeroData = {
 
 export const summary: SummaryData = {
   headline: 'María Belén Corvalán Amil',
-  role: 'Senior Software Engineer · Frontend Specialist',
+  role: 'Senior Software Engineer · Frontend Architect',
   subtitle: 'Frontend Architecture · TypeScript · React · Angular · Node.js · Generative AI',
-  description: 'I transform complex product and business needs into scalable, accessible, and maintainable software solutions. With 8+ years of frontend experience and strong backend knowledge, I take ownership from technical definition through implementation, testing, deployment, and continuous improvement.',
-  descriptionMobile: 'Senior Frontend Engineer with 8+ years of experience and strong backend knowledge. I build scalable, accessible, and maintainable solutions, taking ownership from technical definition to implementation, testing, deployment, and continuous improvement.',
+  description: 'Transforming complex product and business needs into scalable, accessible, high-performance, and maintainable software solutions. Solid backend integration skills and a growing hands-on interest in DevOps. Collaborative and communication-driven, with a strong team mindset and a constant drive to learn. Leverages generative AI to accelerate analysis, documentation, testing, and workflow automation.',
+  descriptionMobile: 'Transforming complex product and business needs into scalable, accessible, high-performance solutions. Solid backend integration skills, a growing interest in DevOps, and a collaborative, team-driven mindset. Leverages generative AI to accelerate analysis, documentation, testing, and workflow automation.',
 };
 
 export const blogPosts: BlogPost[] = [
@@ -242,31 +247,23 @@ export const blogPosts: BlogPost[] = [
 
 export const skills: Skill[] = [
   {
-    category: 'Frontend Engineering',
-    items: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Angular', 'Web Components', 'HTML', 'CSS', 'Sass', 'Storybook'],
+    category: 'Frontend',
+    items: ['React.js', 'Next.js', 'Angular', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Sass', 'Storybook.js', 'Design Systems', 'Component Libraries', 'Design Tokens', 'Responsive Design'],
   },
   {
-    category: 'Frontend Architecture & Design Systems',
-    items: ['Design Systems', 'Component APIs', 'Design Tokens', 'Component Libraries', 'Micro Frontends', 'Accessibility (WCAG)', 'Responsive Design', 'Performance Optimization', 'Adobe Experience Manager (AEM)'],
+    category: 'Backend & Data',
+    items: ['Node.js / Nest.js', 'REST APIs', 'GraphQL', 'SQL & NoSQL', 'Python'],
   },
   {
-    category: 'Backend & Integrations',
-    items: ['Node.js / Express', 'REST APIs', 'GraphQL'],
+    category: 'Quality',
+    items: ['Unit Testing', 'Test Automation', 'Integration Testing', 'End-to-End (E2E)', 'WCAG'],
   },
   {
-    category: 'Testing & Delivery',
-    items: ['Vitest', 'Jest', 'Cypress', 'Unit & Regression Testing', 'Test Automation', 'CI/CD', 'Code Reviews', 'Azure'],
+    category: 'Delivery',
+    items: ['Git', 'CI/CD', 'Azure'],
   },
   {
-    category: 'AI Engineering',
-    items: ['Claude API', 'Structured Outputs', 'Tool Use', 'Retrieval', 'Evaluation', 'Prompt Engineering', 'OpenAI & Anthropic API', 'Cursor / Copilot / Claude', 'AI-assisted Development', 'n8n / Make / Zapier', 'GitHub Actions', 'Node.js Scripting'],
-  },
-  {
-    category: 'Data',
-    items: ['PostgreSQL', 'MongoDB', 'SQL'],
-  },
-  {
-    category: 'Tooling & Workflow',
-    items: ['Git', 'Figma', 'Agile/Scrum', 'Jira', 'Google Analytics'],
+    category: 'AI',
+    items: ['LLM Integration', 'Prompt Engineering', 'Copilot', 'Claude', 'Cursor'],
   },
 ];

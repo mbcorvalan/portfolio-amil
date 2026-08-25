@@ -9,105 +9,68 @@
   padding: 40px 32px;
 }
 
-.carousel {
-  position: relative;
-  outline: none;
-
-  &:focus-visible {
-    box-shadow: 0 0 0 2px $fg-subtle;
-    border-radius: $radius;
-  }
+.list {
 }
 
-.viewport {
-  overflow: hidden;
-  border-radius: $radius;
-}
-
-.track {
+.row {
   display: flex;
-  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: flex-start;
+  gap: 32px;
+  padding: 22px 0;
+  border-bottom: 1px solid $border;
 
-  @media (prefers-reduced-motion: reduce) {
-    transition: none;
+  &:last-child {
+    border-bottom: none;
   }
-}
-
-.slide {
-  flex: 0 0 100%;
-  min-width: 0;
-  padding: 24px 0 28px;
 }
 
 .categoryLabel {
-  font-size: 11px;
+  flex: 0 0 150px;
+  margin: 0;
+  padding-top: 7px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  line-height: 14.56px;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: $fg-muted;
-  margin: 0 0 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid $border;
+  color: #e8e8e8;
 }
 
 .pills {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px;
+  min-width: 0;
 }
 
 .pill {
-  font-size: 12px;
-  color: $fg-tertiary;
-  background: $bg-secondary;
-  border: 0.5px solid $border-subtle;
-  border-radius: 4px;
-  padding: 5px 12px;
-}
-
-.dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding-top: 4px;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: $fg-subtle;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-
-  &:focus-visible {
-    outline: 2px solid $fg-muted;
-    outline-offset: 3px;
-  }
-}
-
-.dotActive {
-  background: $fg;
-  transform: scale(1.4);
-}
-
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: rgb(210, 206, 253);
+  background: transparent;
+  border: 1px solid rgba(210, 206, 253, 0.4);
+  border-radius: 6px;
+  padding: 6px 14px;
 }
 
 @media (max-width: $bp-md) {
   .inner {
     padding: 32px 20px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .categoryLabel {
+    flex: none;
+    padding-top: 0;
   }
 }
 
@@ -117,7 +80,7 @@
   }
 
   .pill {
-    font-size: 11px;
-    padding: 4px 10px;
+    font-size: 11.5px;
+    padding: 5px 12px;
   }
 }

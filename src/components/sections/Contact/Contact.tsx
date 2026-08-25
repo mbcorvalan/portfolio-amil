@@ -3,13 +3,18 @@
 import React from 'react';
 import { Link } from 'react-aria-components';
 import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
+import { uiStrings } from '@/lib/i18n/translations';
 import styles from './Contact.module.scss';
 
 export const Contact: React.FC = () => {
+  const { lang } = useLanguage();
+  const t = uiStrings[lang];
+
   return (
     <section id="contact" className={styles.section} aria-label="Contact">
       <div className={styles.inner}>
-        <SectionLabel>Contact</SectionLabel>
+        <SectionLabel>{t.sectionContact}</SectionLabel>
         <div className={styles.row}>
           <Link href="mailto:bcorvalan.amil@gmail.com" className={styles.link}>
             bcorvalan.amil@gmail.com
@@ -39,7 +44,7 @@ export const Contact: React.FC = () => {
             className={styles.link}
             aria-label="YouTube channel (opens in new tab)"
           >
-            YouTube Channel
+            {t.youtubeChannel}
           </Link>
         </div>
       </div>

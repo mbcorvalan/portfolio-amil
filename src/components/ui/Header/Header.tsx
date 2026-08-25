@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-aria-components';
-import { hero } from '@/lib/data';
+import { LanguageSwitch } from '@/components/ui/LanguageSwitch/LanguageSwitch';
 import styles from '@/components/sections/Hero/Hero.module.scss';
 
 interface HeaderProps {
@@ -12,11 +12,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ variant = 'home' }) => {
   return (
     <header className={styles.topbar} role="banner">
-      {variant === 'home' && (
-        <span className={styles.topbarInfo}>
-          {hero.location}
-        </span>
-      )}
+      {variant === 'home' && <LanguageSwitch />}
       {variant === 'page' && (
         <nav aria-label="Main navigation">
           <Link href="/" className={styles.topbarLink}>Home</Link>
