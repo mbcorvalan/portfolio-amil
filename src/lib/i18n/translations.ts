@@ -29,8 +29,8 @@ export const summaryEs: SummaryData = {
   headline: 'María Belén Corvalán Amil',
   role: 'Ingeniera de Software Senior · Arquitecta Frontend',
   subtitle: 'Arquitectura Frontend · TypeScript · React · Angular · Node.js · IA Generativa',
-  description: 'Transformo necesidades complejas de producto y negocio en soluciones de software escalables, accesibles, de alto rendimiento y mantenibles. Sólidos conocimientos de integración backend y un interés creciente y práctico en DevOps. Colaborativa y orientada a la comunicación, con fuerte espíritu de equipo y una motivación constante por aprender. Aprovecho la IA generativa para acelerar el análisis, la documentación, el testing y la automatización de flujos de trabajo.',
-  descriptionMobile: 'Transformo necesidades complejas de producto y negocio en soluciones escalables, accesibles y de alto rendimiento. Sólidos conocimientos de integración backend, un interés creciente en DevOps y un espíritu colaborativo orientado al equipo. Aprovecho la IA generativa para acelerar el análisis, la documentación, el testing y la automatización.',
+  description: '7+ años transformando necesidades complejas de producto y negocio en soluciones de software escalables, accesibles, de alto rendimiento y mantenibles. Sólidos conocimientos de integración backend y un interés creciente y práctico en DevOps. Colaborativa y orientada a la comunicación, con fuerte espíritu de equipo y una motivación constante por aprender y enseñar. Aprovecho la IA generativa para acelerar el análisis, la documentación, el testing y la automatización de flujos de trabajo.',
+  descriptionMobile: '7+ años transformando necesidades complejas de producto y negocio en soluciones escalables, accesibles y de alto rendimiento. Sólidos conocimientos de integración backend, un interés creciente en DevOps y un espíritu colaborativo orientado al equipo, con foco en aprender y enseñar. Aprovecho la IA generativa para acelerar el análisis, la documentación, el testing y la automatización.',
 };
 
 export const experiencesEs: Experience[] = [

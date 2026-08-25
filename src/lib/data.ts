@@ -103,8 +103,8 @@ export const summary: SummaryData = {
   headline: 'María Belén Corvalán Amil',
   role: 'Senior Software Engineer · Frontend Architect',
   subtitle: 'Frontend Architecture · TypeScript · React · Angular · Node.js · Generative AI',
-  description: 'Transforming complex product and business needs into scalable, accessible, high-performance, and maintainable software solutions. Solid backend integration skills and a growing hands-on interest in DevOps. Collaborative and communication-driven, with a strong team mindset and a constant drive to learn. Leverages generative AI to accelerate analysis, documentation, testing, and workflow automation.',
-  descriptionMobile: 'Transforming complex product and business needs into scalable, accessible, high-performance solutions. Solid backend integration skills, a growing interest in DevOps, and a collaborative, team-driven mindset. Leverages generative AI to accelerate analysis, documentation, testing, and workflow automation.',
+  description: '7+ years transforming complex product and business needs into scalable, accessible, high-performance, and maintainable software solutions. Solid backend integration skills and a growing hands-on interest in DevOps. Collaborative and communication-driven, with a strong team mindset and a constant drive to learn and teach. Leverages generative AI to accelerate analysis, documentation, testing, and workflow automation.',
+  descriptionMobile: '7+ years transforming complex product and business needs into scalable, accessible, high-performance solutions. Solid backend integration skills, a growing interest in DevOps, and a collaborative, team-driven mindset that values learning and teaching. Leverages generative AI to accelerate analysis, documentation, testing, and workflow automation.',
 };
 
 export const blogPosts: BlogPost[] = [
