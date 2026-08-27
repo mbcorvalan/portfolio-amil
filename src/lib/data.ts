@@ -33,9 +33,10 @@ export const experiences: Experience[] = [
       'Development of reusable AEM components and e-commerce functionality.',
       'REST API and analytics integrations across multiple product lines.',
       'Google Analytics implementation for high-traffic digital platforms.',
+      'Built a React Native app to automate social media post publishing.',
       'Cross-functional collaboration and end-to-end delivery ownership.',
     ],
-    skills: ['React', 'TypeScript', 'AEM', 'Storybook'],
+    skills: ['React', 'TypeScript', 'AEM', 'Storybook', 'React Native'],
   },
   {
     id: '3',
@@ -248,7 +249,7 @@ export const blogPosts: BlogPost[] = [
 export const skills: Skill[] = [
   {
     category: 'Frontend',
-    items: ['React.js', 'Next.js', 'Angular', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Sass', 'Storybook.js', 'Design Systems', 'Component Libraries', 'Design Tokens', 'Responsive Design'],
+    items: ['React.js', 'Next.js', 'React Native', 'Angular', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Sass', 'Storybook.js', 'Design Systems', 'Component Libraries', 'Design Tokens', 'Responsive Design'],
   },
   {
     category: 'Backend & Data',
