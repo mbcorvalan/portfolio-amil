@@ -31,12 +31,6 @@ export const Summary: React.FC = () => {
               <path d="M8 2v7m-3-3l3 3l3-3M3 13h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
-          <a href="#contact" className={`${summaryStyles.ctaButton} ${summaryStyles.ctaGhost}`}>
-            {t.ctaContactMe}
-          </a>
-          <a href="/blog" className={summaryStyles.ctaLink}>
-            {t.ctaBlog}
-          </a>
         </nav>
       </div>
     </section>

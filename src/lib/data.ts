@@ -1,4 +1,4 @@
-import { BlogPost, Experience, HeroData, Skill, SummaryData } from '@/types';
+import { BlogPost, Experience, HeroData, Project, Skill, SummaryData } from '@/types';
 
 export const experiences: Experience[] = [
   {
@@ -91,6 +91,18 @@ export const experiences: Experience[] = [
       'Development of a quality-oriented engineering mindset that continues to inform my frontend work.',
     ],
     skills: ['QA', 'Testing', 'Agile'],
+  },
+];
+
+export const projects: Project[] = [
+  {
+    id: '1',
+    title: 'HireFlow',
+    subtitle: 'AI-Powered Talent Lifecycle Platform',
+    status: 'In progress',
+    description: 'An end-to-end AI-powered talent lifecycle platform that manages candidates and employees from job application and AI-assisted screening through hiring, onboarding, employment tracking, and offboarding. Candidates interact through WhatsApp, while recruiters use a centralized dashboard to manage jobs, profiles, conversations, AI-generated scores and summaries, hiring stages, employee records, status changes, and lifecycle transitions.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'WhatsApp API', 'LLM Integration'],
+    github: 'https://github.com/mbcorvalan',
   },
 ];
 

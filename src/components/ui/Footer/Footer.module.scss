@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 .footer {
   padding: 24px 32px;
 }
@@ -5,7 +7,7 @@
 .text {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: $fs-sm;
   line-height: 19.2px;
   font-weight: 400;
   letter-spacing: 0.08em;

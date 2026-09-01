@@ -43,13 +43,13 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 12px;
+  font-size: $fs-sm;
   color: $fg-subtle;
   margin-bottom: 16px;
 }
 
 .title {
-  font-size: clamp(24px, 4vw, 34px);
+  font-size: $fs-h2;
   font-weight: 600;
   color: $fg-bright;
   line-height: 1.25;
@@ -57,7 +57,7 @@
 }
 
 .dek {
-  font-size: 16px;
+  font-size: $fs-lg;
   line-height: 1.5;
   color: $fg-tertiary;
   margin-bottom: 24px;
@@ -71,7 +71,7 @@
 }
 
 .tag {
-  font-size: 10px;
+  font-size: $fs-2xs;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: $fg-tertiary;
@@ -87,13 +87,13 @@
 }
 
 .paragraph {
-  font-size: 14px;
+  font-size: $fs-md;
   line-height: 1.8;
   color: $fg-secondary;
 }
 
 .h2 {
-  font-size: clamp(20px, 3vw, 26px);
+  font-size: $fs-h3;
   font-weight: 700;
   color: $fg-bright;
   letter-spacing: -0.01em;
@@ -103,7 +103,7 @@
 }
 
 .h3 {
-  font-size: 13px;
+  font-size: $fs-base;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -112,7 +112,7 @@
 }
 
 .note {
-  font-size: 13px;
+  font-size: $fs-base;
   font-style: italic;
   line-height: 1.7;
   color: $fg-tertiary;
@@ -129,7 +129,7 @@
 }
 
 .listItem {
-  font-size: 14px;
+  font-size: $fs-md;
   line-height: 1.7;
   color: $fg-secondary;
 }
@@ -170,7 +170,7 @@
 
 .caption {
   margin-top: 8px;
-  font-size: 12px;
+  font-size: $fs-sm;
   color: $fg-subtle;
   text-align: center;
 }
@@ -195,6 +195,6 @@
   }
 
   .paragraph {
-    font-size: 13px;
+    font-size: $fs-base;
   }
 }

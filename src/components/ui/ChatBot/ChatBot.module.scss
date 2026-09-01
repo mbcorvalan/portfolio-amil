@@ -18,7 +18,7 @@
   border: 1px solid $border-light;
   background: $bg-secondary;
   color: $fg-tertiary;
-  font-size: 18px;
+  font-size: $fs-h4;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
   justify-content: space-between;
   padding: 12px 16px;
   border-bottom: 1px solid $border;
-  font-size: 11px;
+  font-size: $fs-xs;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $fg-tertiary;
@@ -58,7 +58,7 @@
   border: none;
   color: $fg-tertiary;
   cursor: pointer;
-  font-size: 12px;
+  font-size: $fs-sm;
   padding: 0;
   line-height: 1;
   transition: color 0.15s;
@@ -84,7 +84,7 @@
 }
 
 .msg {
-  font-size: 12px;
+  font-size: $fs-sm;
   line-height: 1.6;
   padding: 8px 12px;
   border-radius: $radius;
@@ -141,7 +141,7 @@
   background: none;
   border: none;
   outline: none;
-  font-size: 12px;
+  font-size: $fs-sm;
   font-family: inherit;
   color: $fg;
   caret-color: $fg-muted;
@@ -159,7 +159,7 @@
   height: 26px;
   color: $fg-tertiary;
   cursor: pointer;
-  font-size: 13px;
+  font-size: $fs-base;
   display: flex;
   align-items: center;
   justify-content: center;

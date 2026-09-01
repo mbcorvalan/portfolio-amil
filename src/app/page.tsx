@@ -2,6 +2,7 @@ import { Hero } from '@/components/sections/Hero/Hero';
 import { Summary } from '@/components/sections/Summary/Summary';
 import { Experience } from '@/components/sections/Experience/Experience';
 import { Skills } from '@/components/sections/Skills/Skills';
+import { Projects } from '@/components/sections/Projects/Projects';
 import { Contact } from '@/components/sections/Contact/Contact';
 import { BackToTop } from '@/components/ui/BackToTop/BackToTop';
 import { ChatBot } from '@/components/ui/ChatBot/ChatBot';
@@ -17,6 +18,7 @@ export default function Home() {
       </div>
       <Experience />
       <Skills />
+      <Projects />
       <Contact />
       <BackToTop />
       <ChatBot />

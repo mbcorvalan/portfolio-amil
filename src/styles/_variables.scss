@@ -24,3 +24,17 @@ $bp-xl: 1280px;
 $bp-lg: 1024px;
 $bp-md: 768px;
 $bp-sm: 480px;
+
+// Typography scale — use these instead of ad-hoc font-size values
+// so text sizes form a consistent hierarchy across sections.
+$fs-2xs: 10px;  // fine print: tags, categories, tiny badges
+$fs-xs: 11px;   // uppercase eyebrow labels, nav links, meta
+$fs-sm: 12px;   // captions, pills, secondary meta
+$fs-base: 13px; // buttons, toggles, secondary body text
+$fs-md: 14px;   // primary body text, descriptions
+$fs-lg: 16px;   // lead text, card/entry titles
+
+$fs-h4: 18px;                        // component-level headings
+$fs-h3: clamp(22px, 3vw, 30px);      // sub-section headings
+$fs-h2: clamp(24px, 4vw, 34px);      // page-section titles
+$fs-h1: clamp(28px, 5vw, 44px);      // page-level titles (biggest on the page)

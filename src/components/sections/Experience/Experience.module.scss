@@ -30,7 +30,7 @@
 }
 
 .year {
-  font-size: 15px;
+  font-size: $fs-md;
   line-height: 24px;
   letter-spacing: 0.02em;
   color: $fg-bright;
@@ -38,7 +38,7 @@
 }
 
 .location {
-  font-size: 11px;
+  font-size: $fs-xs;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: $fg-subtle;
@@ -50,14 +50,14 @@
 }
 
 .company {
-  font-size: 15px;
+  font-size: $fs-lg;
   font-weight: 500;
   color: #e8e8e8;
   margin-bottom: 2px;
 }
 
 .role {
-  font-size: 12.5px;
+  font-size: $fs-sm;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.06em;
@@ -66,7 +66,7 @@
 }
 
 .summary {
-  font-size: 14px;
+  font-size: $fs-md;
   color: $fg-tertiary;
   line-height: 1.6;
   max-width: 68ch;
@@ -78,9 +78,8 @@
   align-items: center;
   gap: 6px;
   padding: 0;
-  font-size: 13px;
+  font-size: $fs-base;
   font-weight: 400;
-  text-transform: uppercase;
   color: $fg-secondary;
   background: none;
   border: none;
@@ -98,8 +97,16 @@
   }
 }
 
+.toggleLabel {
+  text-transform: lowercase;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
 .toggleIcon {
-  font-size: 14px;
+  font-size: $fs-md;
   line-height: 1;
 }
 
@@ -110,7 +117,7 @@
 }
 
 .desc {
-  font-size: 13px;
+  font-size: $fs-base;
   color: $fg-tertiary;
   line-height: 1.6;
   max-width: 68ch;
@@ -147,10 +154,10 @@
   }
 
   .company {
-    font-size: 14px;
+    font-size: $fs-md;
   }
 
   .desc {
-    font-size: 12px;
+    font-size: $fs-sm;
   }
 }

@@ -17,7 +17,9 @@ export interface Skill {
 export interface Project {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
+  status: string;
   technologies: string[];
   link?: string;
   github?: string;

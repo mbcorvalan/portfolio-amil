@@ -41,7 +41,7 @@ export const Experience: React.FC = () => {
                     aria-controls={`responsibilities-${exp.id}`}
                     onClick={() => setOpenId(isOpen ? null : exp.id)}
                   >
-                    {t.keyResponsibilities}
+                    <span className={styles.toggleLabel}>{t.keyResponsibilities}</span>
                     <span className={styles.toggleIcon} aria-hidden="true">{isOpen ? '−' : '+'}</span>
                   </button>
                   {isOpen && (

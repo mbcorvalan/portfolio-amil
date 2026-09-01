@@ -1,7 +1,7 @@
 @use '@/styles/variables' as *;
 
 .label {
-  font-size: 11px;
+  font-size: $fs-xs;
   color: $fg-subtle;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -10,7 +10,7 @@
 
 @media (max-width: $bp-sm) {
   .label {
-    font-size: 10px;
+    font-size: $fs-2xs;
     margin-bottom: 20px;
   }
 }

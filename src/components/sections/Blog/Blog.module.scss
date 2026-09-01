@@ -15,7 +15,7 @@
 }
 
 .pageTitle {
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: $fs-h1;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: $fg-bright;
@@ -88,7 +88,7 @@
 }
 
 .thumbMark {
-  font-size: 30px;
+  font-size: $fs-h3;
   font-weight: 700;
   letter-spacing: 0;
   color: $border-light;
@@ -106,7 +106,7 @@
 }
 
 .category {
-  font-size: 10px;
+  font-size: $fs-2xs;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -115,7 +115,7 @@
 }
 
 .title {
-  font-size: 16px;
+  font-size: $fs-lg;
   font-weight: 600;
   color: #e8e8e8;
   line-height: 1.4;
@@ -128,7 +128,7 @@
 }
 
 .subtitle {
-  font-size: 12px;
+  font-size: $fs-sm;
   color: $fg-tertiary;
 }
 
@@ -144,10 +144,6 @@
   .thumb {
     width: 88px;
     height: 66px;
-  }
-
-  .thumbMark {
-    font-size: 22px;
   }
 }
 
@@ -169,11 +165,7 @@
     height: 54px;
   }
 
-  .thumbMark {
-    font-size: 18px;
-  }
-
   .title {
-    font-size: 14px;
+    font-size: $fs-md;
   }
 }

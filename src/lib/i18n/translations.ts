@@ -1,4 +1,4 @@
-import { Experience, Skill, SummaryData } from '@/types';
+import { Experience, Project, Skill, SummaryData } from '@/types';
 
 export const uiStrings = {
   en: {
@@ -11,6 +11,11 @@ export const uiStrings = {
     ctaBlog: 'Blog',
     keyResponsibilities: 'Key responsibilities',
     youtubeChannel: 'YouTube Channel',
+    sectionProjects: 'Personal Projects',
+    navProjects: 'Projects',
+    projectsIntro: 'Things I\'m building on my own time.',
+    ctaViewOnGithub: 'View on GitHub',
+    ctaMoreOnGithub: 'Check out more of my work on GitHub',
   },
   es: {
     sectionExperience: 'Experiencia',
@@ -22,6 +27,11 @@ export const uiStrings = {
     ctaBlog: 'Blog',
     keyResponsibilities: 'Responsabilidades clave',
     youtubeChannel: 'Canal de YouTube',
+    sectionProjects: 'Proyectos Personales',
+    navProjects: 'Proyectos',
+    projectsIntro: 'Cosas que estoy construyendo en mi tiempo libre.',
+    ctaViewOnGithub: 'Ver en GitHub',
+    ctaMoreOnGithub: 'Mirá más de mi trabajo en GitHub',
   },
 };
 
@@ -123,6 +133,18 @@ export const experiencesEs: Experience[] = [
       'Desarrollo de una mentalidad de ingeniería orientada a la calidad que sigue guiando mi trabajo frontend.',
     ],
     skills: ['QA', 'Testing', 'Agile'],
+  },
+];
+
+export const projectsEs: Project[] = [
+  {
+    id: '1',
+    title: 'HireFlow',
+    subtitle: 'Plataforma de Ciclo de Vida de Talento con IA',
+    status: 'En desarrollo',
+    description: 'Una plataforma end-to-end impulsada por IA que gestiona candidatos y empleados desde la postulación y el screening asistido por IA hasta la contratación, el onboarding, el seguimiento del empleo y el offboarding. Los candidatos interactúan por WhatsApp, mientras que los reclutadores usan un dashboard centralizado para gestionar puestos, perfiles, conversaciones, puntajes y resúmenes generados por IA, etapas de contratación, registros de empleados, cambios de estado y transiciones del ciclo de vida.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'WhatsApp API', 'Integración de LLMs'],
+    github: 'https://github.com/mbcorvalan',
   },
 ];
 
