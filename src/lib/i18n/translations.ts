@@ -15,7 +15,7 @@ export const uiStrings = {
     navProjects: 'Projects',
     projectsIntro: 'Things I\'m building on my own time.',
     ctaViewOnGithub: 'View on GitHub',
-    ctaMoreOnGithub: 'Check out more of my work on GitHub',
+    ctaMoreOnGithub: 'Check out more',
   },
   es: {
     sectionExperience: 'Experiencia',
@@ -31,7 +31,7 @@ export const uiStrings = {
     navProjects: 'Proyectos',
     projectsIntro: 'Cosas que estoy construyendo en mi tiempo libre.',
     ctaViewOnGithub: 'Ver en GitHub',
-    ctaMoreOnGithub: 'Mirá más de mi trabajo en GitHub',
+    ctaMoreOnGithub: 'Mirá más',
   },
 };
 

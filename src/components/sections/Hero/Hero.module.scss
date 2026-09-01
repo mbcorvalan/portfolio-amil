@@ -114,7 +114,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   font-size: $fs-sm;
   letter-spacing: 0.02em;
   text-transform: lowercase;
-  color: $fg-tertiary;
+  color: $fg-bright;
   text-decoration: none;
   white-space: nowrap;
   outline: none;
@@ -125,7 +125,7 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   &[data-hovered] {
-    color: $fg-muted;
+    color: $accent-bright;
     text-decoration: underline;
   }
 
@@ -157,14 +157,14 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   font-size: $fs-xs;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $fg-tertiary;
+  color: $fg-bright;
   text-decoration: none;
   white-space: nowrap;
   outline: none;
   transition: color 0.15s;
 
   &[data-hovered] {
-    color: $fg-muted;
+    color: $accent-bright;
   }
 
   &[data-focus-visible] {
