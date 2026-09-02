@@ -5,13 +5,10 @@
 }
 
 .text {
-  margin: 0;
   font-family: var(--font-sans);
-  font-size: $fs-sm;
-  line-height: 19.2px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: $fs-md;
+  color: $fg-tertiary;
+  line-height: 1.6;
+  margin: 0 0 16px;
   text-align: center;
-  color: #888;
 }

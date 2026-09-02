@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Link } from 'react-aria-components';
 import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
 import { projects } from '@/lib/data';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
@@ -17,7 +16,6 @@ export const Projects: React.FC = () => {
     <section id="projects" className={styles.section}>
       <div className={styles.inner}>
         <SectionLabel>{t.sectionProjects}</SectionLabel>
-        <p className={styles.intro}>{t.projectsIntro}</p>
         <ul className={styles.list}>
           {items.map((project) => (
             <li key={project.id} className={styles.item}>
@@ -32,29 +30,9 @@ export const Projects: React.FC = () => {
                   <span key={tech} className={styles.pill}>{tech}</span>
                 ))}
               </div>
-              {project.github && (
-                <Link
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.link}
-                  aria-label={`${project.title} — ${t.ctaViewOnGithub} (opens in new tab)`}
-                >
-                  {t.ctaViewOnGithub}
-                </Link>
-              )}
             </li>
           ))}
         </ul>
-        <Link
-          href="https://github.com/mbcorvalan"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.githubCta}
-          aria-label="GitHub profile (opens in new tab)"
-        >
-          {t.ctaMoreOnGithub}
-        </Link>
       </div>
     </section>
   );

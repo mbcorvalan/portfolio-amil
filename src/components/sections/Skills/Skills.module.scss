@@ -51,11 +51,14 @@
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.02em;
-  color: rgb(210, 206, 253);
   background: transparent;
-  border: 1px solid rgba(210, 206, 253, 0.4);
   border-radius: 6px;
   padding: 6px 14px;
+}
+
+.pillCobalt {
+  color: $accent-violet;
+  border: 1px solid $accent-violet;
 }
 
 @media (max-width: $bp-md) {

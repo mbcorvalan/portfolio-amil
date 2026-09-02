@@ -38,11 +38,11 @@
 }
 
 .location {
-  font-size: $fs-xs;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: $fg-subtle;
-  margin-top: 4px;
+  font-size: $fs-md;
+  color: $fg-muted;
+  line-height: 1.6;
+  max-width: 68ch;
+  margin: 0 0 10px;
 }
 
 .content {
@@ -51,23 +51,23 @@
 
 .company {
   font-size: $fs-lg;
-  font-weight: 500;
-  color: #e8e8e8;
+  font-weight: 600;
+  color: $accent-violet;
   margin-bottom: 2px;
 }
 
 .role {
-  font-size: $fs-sm;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.06em;
-  color: #d2cefd;
+  color: $fg-bright;
   margin-bottom: 6px;
 }
 
 .summary {
   font-size: $fs-md;
-  color: $fg-tertiary;
+  color: $fg-muted;
   line-height: 1.6;
   max-width: 68ch;
   margin: 0 0 10px;

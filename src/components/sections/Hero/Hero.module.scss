@@ -6,18 +6,10 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 .heroGroup {
   position: relative;
   background-color: $bg;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-image:
+    linear-gradient(to bottom, transparent 70%, $bg 100%),
+    linear-gradient(to top right, transparent 40%, rgba(149, 114, 225, 0.25));
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 75% 65% at 72% 0%, $accent-glow 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
 }
 
 .hero {
@@ -46,30 +38,25 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   gap: 14px;
 }
 
-.location {
-  font-size: $fs-xs;
-  font-weight: 400;
-  line-height: 18.4px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: $fg-muted;
-}
-
 .headline {
   margin: 0;
   font-size: $fs-h1;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1.15;
-  color: $fg;
+  color: $fg-bright;
+}
+
+.headlineAccent {
+  color: $accent-violet;
 }
 
 .role {
   margin: 0;
   font-size: $fs-lg;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.01em;
-  color: $fg-bright;
+  color: $accent-violet;
 }
 
 .subtitle {
@@ -84,9 +71,9 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   margin: 4px 0 0;
   max-width: 850px;
   font-size: $fs-lg;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
-  color: $fg-tertiary;
+  color: $fg-bright;
 }
 
 .descriptionMobile {
@@ -111,7 +98,11 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navLink {
-  font-size: $fs-sm;
+  margin: 4px 0 0;
+  max-width: 850px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
   letter-spacing: 0.02em;
   text-transform: lowercase;
   color: $fg-bright;
@@ -190,77 +181,12 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
   gap: 32px;
 }
 
-/* ── Role card ── */
-.roleCard {
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-  padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.01);
-  opacity: 0;
-  transform: translateY(18px);
-  animation: fadeUp 0.85s $ease 0.8s forwards;
-}
-
-.roleLabel {
-  display: block;
-  margin-bottom: 8px;
-  font-size: $fs-lg;
-  font-weight: 500;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: $fg-tertiary;
-}
-
-.roleTitle {
-  font-size: $fs-lg;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: $fg;
-  margin: 0;
-}
-
-.roleDetail {
-  font-size: $fs-2xs;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: $fg-tertiary;
-}
-
 /* ── Meta description ── */
 .meta {
   text-align: right;
   opacity: 0;
   transform: translateY(18px);
   animation: fadeUp 0.85s $ease 0.9s forwards;
-}
-
-.metaDescription {
-  max-width: 320px;
-  margin: 0;
-  padding: 0;
-  font-size: $fs-md;
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: 0.06em;
-  color: $fg-tertiary;
-  text-align: right;
-}
-
-.metaItem {
-  font-size: $fs-lg;
-  font-family: var(--font-mono), monospace;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: $fg-tertiary;
 }
 
 @keyframes fadeUp {
@@ -317,17 +243,8 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
     gap: 14px;
   }
 
-  .roleCard {
-    width: 100%;
-  }
-
   .meta {
     text-align: left;
-  }
-
-  .metaDescription {
-    max-width: 100%;
-    text-align: center;
   }
 }
 
@@ -357,27 +274,4 @@ $ease: cubic-bezier(0.16, 1, 0.3, 1);
     gap: 10px;
   }
 
-  .roleCard {
-    padding: 12px 14px;
-  }
-
-  .roleTitle {
-    font-size: $fs-sm;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
-  }
-
-  .roleLine {
-    margin-bottom: 8px;
-  }
-
-  .roleDetail {
-    font-size: $fs-2xs;
-    letter-spacing: 0.2em;
-  }
-
-  .metaItem {
-    font-size: $fs-2xs;
-    line-height: 1.7;
-  }
 }

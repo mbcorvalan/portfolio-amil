@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { hero, summary } from '@/lib/data';
+import { summary } from '@/lib/data';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
 import { summaryEs, uiStrings } from '@/lib/i18n/translations';
 import styles from '../Hero/Hero.module.scss';
@@ -12,12 +12,16 @@ export const Summary: React.FC = () => {
   const { lang } = useLanguage();
   const t = uiStrings[lang];
   const s = lang === 'es' ? summaryEs : summary;
+  const nameWords = s.headline.split(' ');
+  const givenNames = nameWords.slice(0, 2).join(' ');
+  const surname = nameWords.slice(2).join(' ');
 
   return (
     <section id="summary" className={styles.summarySection} aria-labelledby="summary-title">
       <div className={styles.summaryContainer}>
-        <span className={styles.location}>{hero.location}</span>
-        <h1 id="summary-title" className={styles.headline}>{s.headline}</h1>
+        <h1 id="summary-title" className={styles.headline}>
+          {givenNames}{surname && <> <span className={styles.headlineAccent}>{surname}</span></>}
+        </h1>
         <p className={styles.role}>{s.role}</p>
         <p className={`${styles.description} ${styles.descriptionDesktop}`}>{s.description}</p>
         <p className={`${styles.description} ${styles.descriptionMobile}`}>{s.descriptionMobile}</p>

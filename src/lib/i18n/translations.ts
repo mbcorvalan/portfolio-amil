@@ -9,7 +9,7 @@ export const uiStrings = {
     ctaDownloadResume: 'Download resume',
     ctaContactMe: 'Contact me',
     ctaBlog: 'Blog',
-    keyResponsibilities: 'Key responsibilities',
+    keyResponsibilities: 'Show more responsibilities',
     youtubeChannel: 'YouTube Channel',
     sectionProjects: 'Personal Projects',
     navProjects: 'Projects',

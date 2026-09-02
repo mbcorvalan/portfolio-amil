@@ -33,24 +33,23 @@
 }
 
 .ctaPrimary {
-  background: rgba(145, 132, 230, 0.08);
-  border-color: rgba(210, 206, 253, 0.4);
-  color: #d2cefd;
+  background: rgba(190, 169, 236, 0.12);
+  border: 1.5px solid $accent-violet;
+  color: $accent-violet;
 
   &:hover {
-    background: rgba(145, 132, 230, 0.14);
-    border-color: #d2cefd;
+    background: rgba(190, 169, 236, 0.2);
   }
 }
 
 .ctaSecondary {
-  background: transparent;
-  border-color: $fg-subtle;
-  color: $fg;
+  background: $border-light;
+  border-color: $border-light;
+  color: $fg-bright;
 
   &:hover {
-    border-color: $fg-muted;
-    background: rgba(255, 255, 255, 0.03);
+    background: #3d3d3d;
+    border-color: #3d3d3d;
   }
 }
 

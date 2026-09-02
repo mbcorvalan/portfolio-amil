@@ -17,8 +17,12 @@
 }
 
 .link {
-  font-size: $fs-base;
-  color: $fg-secondary;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  color: $fg-bright;
+  margin: 6px 0 10px;
   display: flex;
   align-items: center;
   gap: 6px;

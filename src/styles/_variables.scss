@@ -19,6 +19,14 @@ $accent-bright: #818cf8;
 $accent-dim: #4f52d6;
 $accent-glow: rgba(99, 102, 241, 0.35);
 
+// Analogous/complementary accents — used sparingly to differentiate
+// sections and elements (companies, tech pills, status badges).
+$accent-cobalt: #4c7cf5;
+$accent-lime: #4ade80;
+$accent-amber: #f0b860;
+$accent-violet: #bea9ec;
+$accent-gradient: linear-gradient(135deg, $accent-bright 0%, $accent-cobalt 100%);
+
 // Breakpoints
 $bp-xl: 1280px;
 $bp-lg: 1024px;

@@ -22,7 +22,7 @@ export const Skills: React.FC = () => {
               <p className={styles.categoryLabel}>{group.category}</p>
               <div className={styles.pills}>
                 {group.items.map((skill) => (
-                  <span key={skill} className={styles.pill}>{skill}</span>
+                  <span key={skill} className={`${styles.pill} ${styles.pillCobalt}`}>{skill}</span>
                 ))}
               </div>
             </div>
