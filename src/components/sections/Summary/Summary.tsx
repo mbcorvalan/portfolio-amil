@@ -2,16 +2,14 @@
 
 import React from 'react';
 import { summary } from '@/lib/data';
-import { useLanguage } from '@/lib/i18n/LanguageContext';
-import { summaryEs, uiStrings } from '@/lib/i18n/translations';
+import { uiStrings } from '@/lib/i18n/translations';
 import styles from '../Hero/Hero.module.scss';
 import summaryStyles from './Summary.module.scss';
 
 
 export const Summary: React.FC = () => {
-  const { lang } = useLanguage();
-  const t = uiStrings[lang];
-  const s = lang === 'es' ? summaryEs : summary;
+  const t = uiStrings;
+  const s = summary;
   const nameWords = s.headline.split(' ');
   const givenNames = nameWords.slice(0, 2).join(' ');
   const surname = nameWords.slice(2).join(' ');

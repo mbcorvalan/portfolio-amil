@@ -3,13 +3,11 @@
 import React from 'react';
 import { Link } from 'react-aria-components';
 import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
-import { useLanguage } from '@/lib/i18n/LanguageContext';
 import { uiStrings } from '@/lib/i18n/translations';
 import styles from './Contact.module.scss';
 
 export const Contact: React.FC = () => {
-  const { lang } = useLanguage();
-  const t = uiStrings[lang];
+  const t = uiStrings;
 
   return (
     <section id="contact" className={styles.section} aria-label="Contact">

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { WebVitals } from "@/components/ui/WebVitals/WebVitals";
-import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,7 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <WebVitals />
-        <LanguageProvider>{children}</LanguageProvider>
+        {children}
       </body>
     </html>
   );

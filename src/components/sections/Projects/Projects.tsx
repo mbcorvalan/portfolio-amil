@@ -3,14 +3,12 @@
 import React from 'react';
 import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
 import { projects } from '@/lib/data';
-import { useLanguage } from '@/lib/i18n/LanguageContext';
-import { projectsEs, uiStrings } from '@/lib/i18n/translations';
+import { uiStrings } from '@/lib/i18n/translations';
 import styles from './Projects.module.scss';
 
 export const Projects: React.FC = () => {
-  const { lang } = useLanguage();
-  const t = uiStrings[lang];
-  const items = lang === 'es' ? projectsEs : projects;
+  const t = uiStrings;
+  const items = projects;
 
   return (
     <section id="projects" className={styles.section}>

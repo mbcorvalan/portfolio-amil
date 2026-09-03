@@ -3,14 +3,12 @@
 import React from 'react';
 import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
 import { skills } from '@/lib/data';
-import { useLanguage } from '@/lib/i18n/LanguageContext';
-import { skillsEs, uiStrings } from '@/lib/i18n/translations';
+import { uiStrings } from '@/lib/i18n/translations';
 import styles from './Skills.module.scss';
 
 export const Skills: React.FC = () => {
-  const { lang } = useLanguage();
-  const t = uiStrings[lang];
-  const groups = lang === 'es' ? skillsEs : skills;
+  const t = uiStrings;
+  const groups = skills;
 
   return (
     <section id="skills" className={styles.section}>

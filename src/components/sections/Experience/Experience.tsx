@@ -3,15 +3,13 @@
 import React, { useState } from 'react';
 import { SectionLabel } from '@/components/ui/SectionLabel/SectionLabel';
 import { experiences } from '@/lib/data';
-import { useLanguage } from '@/lib/i18n/LanguageContext';
-import { experiencesEs, uiStrings } from '@/lib/i18n/translations';
+import { uiStrings } from '@/lib/i18n/translations';
 import styles from './Experience.module.scss';
 
 export const Experience: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(null);
-  const { lang } = useLanguage();
-  const t = uiStrings[lang];
-  const items = lang === 'es' ? experiencesEs : experiences;
+  const t = uiStrings;
+  const items = experiences;
 
   return (
     <section id="experience" className={styles.section}>
