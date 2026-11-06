@@ -1,16 +1,17 @@
 @use '@/styles/variables' as *;
 
 .label {
-  font-size: $fs-xs;
-  color: $fg-subtle;
-  letter-spacing: 0.14em;
+  font-size: $fs-2xs;
+  font-weight: 600;
+  color: #432d7f;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 1.75rem;
 }
 
 @media (max-width: $bp-sm) {
   .label {
     font-size: $fs-2xs;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 }

@@ -1,6 +1,6 @@
 @use '@/styles/variables' as *;
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .btn {
     display: none;
   }
@@ -8,8 +8,8 @@
 
 .btn {
   position: fixed;
-  left: 32px;
-  bottom: 48px;
+  left: 2rem;
+  bottom: calc(3rem + var(--footer-overlap, 0px));
   z-index: 50;
   background: none;
   border: none;
@@ -20,7 +20,7 @@
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $fg-tertiary;
+  color: $bg;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   transition: color 0.2s, opacity 0.25s ease;
@@ -30,14 +30,14 @@
   &.visible {
     opacity: 1;
     pointer-events: auto;
-    color: #828282;
+    color: $bg;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    margin-bottom: 28px;
-    font-size: 13px;
+    margin-bottom: 1.75rem;
+    font-size: 0.8125rem;
   }
 
   &:hover {
-    color: $fg-muted;
+    color: #555;
   }
 }

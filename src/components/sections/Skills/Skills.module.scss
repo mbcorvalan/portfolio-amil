@@ -1,89 +1,205 @@
 @use '@/styles/variables' as *;
 
+$ease: cubic-bezier(0.16, 1, 0.3, 1);
+
 .section {
 }
 
 .inner {
-  max-width: $content-max;
+  max-width: $hero-max;
   margin: 0 auto;
-  padding: 40px 32px;
+  padding: 5rem 2.25rem;
 }
 
-.list {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  align-items: start;
+  gap: 1.25rem;
 }
 
-.row {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  padding: 22px 0;
-  border-bottom: 1px solid $border;
+/* ── Card ── */
+.card {
+  --accent: #7c5cf0;
 
-  &:last-child {
-    border-bottom: none;
+  position: relative;
+  padding: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 12%, #e9e9ef);
+  border-radius: 1.25rem;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 7%, #fff) 0%, #fff 55%);
+  box-shadow:
+    0 1px 2px rgba(20, 16, 40, 0.04),
+    0 0.625rem 1.75rem -0.875rem color-mix(in srgb, var(--accent) 25%, transparent);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+
+  &:hover,
+  &.cardOpen {
+    border-color: color-mix(in srgb, var(--accent) 28%, #e9e9ef);
+    box-shadow:
+      0 1px 2px rgba(20, 16, 40, 0.04),
+      0 1rem 2.25rem -0.875rem color-mix(in srgb, var(--accent) 38%, transparent);
   }
 }
 
-.categoryLabel {
-  flex: 0 0 150px;
-  margin: 0;
-  padding-top: 7px;
-  font-size: $fs-base;
-  font-weight: 500;
-  line-height: 14.56px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #e8e8e8;
-}
-
-.pills {
-  flex: 1;
+.cardHeader {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  min-width: 0;
+  align-items: center;
+  gap: 1rem;
 }
 
-.pill {
+.iconBox {
+  flex: none;
   display: inline-flex;
   align-items: center;
-  font-size: $fs-sm;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.02em;
-  background: transparent;
-  border-radius: 6px;
-  padding: 6px 14px;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  color: var(--accent);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--accent) 8%, #fff) 0%,
+    color-mix(in srgb, var(--accent) 20%, #fff) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, #fff);
+  box-shadow: 0 0.5rem 1.25rem -0.5rem color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
-.pillCobalt {
-  color: $accent-violet;
-  border: 1px solid $accent-violet;
+.titleBlock {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: $fs-h4;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #16141f;
+}
+
+.count {
+  font-size: $fs-sm;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a8798;
+}
+
+.toggle {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, #fff);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--accent);
+  cursor: pointer;
+  transition: transform 0.35s $ease, background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 0.1875rem;
+  }
+
+  &[aria-expanded='true'] {
+    transform: rotate(45deg);
+    background: var(--accent);
+    color: #fff;
+  }
+}
+
+/* ── Accordion panel: animates height via grid rows 0fr → 1fr ── */
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s $ease;
+
+  .cardOpen & {
+    grid-template-rows: 1fr;
+  }
+}
+
+.items {
+  min-height: 0;
+  overflow: hidden;
+  // Two independent columns: items stack one under another without lining up across columns
+  columns: 2;
+  column-gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  opacity: 0;
+  transition: opacity 0.25s ease, padding-top 0.35s $ease;
+
+  .cardOpen & {
+    padding-top: 1.375rem;
+    opacity: 1;
+  }
+}
+
+.item {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.75rem;
+  break-inside: avoid;
+  font-size: $fs-md;
+  line-height: 1.4;
+  color: #3d3a4a;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .items,
+  .toggle {
+    transition: none;
+  }
 }
 
 @media (max-width: $bp-md) {
   .inner {
-    padding: 32px 20px;
-  }
-
-  .row {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .categoryLabel {
-    flex: none;
-    padding-top: 0;
+    padding: 3.5rem 1.5rem;
   }
 }
 
 @media (max-width: $bp-sm) {
   .inner {
-    padding: 24px 16px;
+    padding: 2.75rem 1rem;
   }
 
-  .pill {
-    font-size: $fs-xs;
-    padding: 5px 12px;
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .iconBox {
+    width: 3rem;
+    height: 3rem;
   }
 }

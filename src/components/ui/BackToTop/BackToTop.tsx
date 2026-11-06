@@ -7,12 +7,23 @@ const SHOW_AFTER_PX = 600;
 
 export const BackToTop: React.FC = () => {
   const [visible, setVisible] = useState(false);
+  // How far the footer has scrolled into view; the button is lifted by this much so it never overlaps it
+  const [footerOverlap, setFooterOverlap] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > SHOW_AFTER_PX);
+    const onScroll = () => {
+      setVisible(window.scrollY > SHOW_AFTER_PX);
+      const footer = document.querySelector('footer');
+      const footerTop = footer ? footer.getBoundingClientRect().top : Infinity;
+      setFooterOverlap(Math.max(0, window.innerHeight - footerTop));
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
   }, []);
 
   const handleClick = () => {
@@ -58,6 +69,7 @@ export const BackToTop: React.FC = () => {
     <button
       onClick={handleClick}
       className={`${styles.btn} ${visible ? styles.visible : ''}`}
+      style={{ '--footer-overlap': `${footerOverlap}px` } as React.CSSProperties}
       aria-label="Back to top"
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}

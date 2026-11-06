@@ -4,31 +4,31 @@
 }
 
 .inner {
-  max-width: $content-max;
+  max-width: $hero-max;
   margin: 0 auto;
-  padding: 40px 32px;
+  padding: 5rem 2.25rem;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 1.75rem;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .item {
-  padding: 22px 24px;
+  padding: 1.375rem 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: $radius-lg;
   background: rgba(255, 255, 255, 0.015);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.25);
   transition: border-color 0.2s, box-shadow 0.2s;
 
   &:hover {
     border-color: rgba(255, 255, 255, 0.16);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.35);
   }
 }
 
@@ -36,78 +36,76 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
+// Matches the Experience role title
 .title {
-  font-size: $fs-lg;
+  font-family: var(--font-sora);
+  font-size: $fs-h4;
   font-weight: 600;
-  color: $accent-violet;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #0b1220;
   margin: 0;
 }
 
 .status {
   flex-shrink: 0;
   font-size: $fs-sm;
-  line-height: 18px;
+  line-height: 1.125rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: $accent-amber;
   background: rgba(240, 184, 96, 0.12);
   border: 1px solid rgba(240, 184, 96, 0.35);
   border-radius: 999px;
-  padding: 3px 10px;
-}
-
-.subtitle {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  color: $fg-bright;
-  margin: 6px 0 10px;
+  padding: 0.1875rem 0.625rem;
 }
 
 .description {
   font-size: $fs-md;
   color: $fg-tertiary;
   line-height: 1.6;
-  margin: 0 0 16px;
+  margin: 0.625rem 0 1rem;
 }
 
 .pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .pill {
+  --accent: #7c5cf0;
+
   display: inline-flex;
   align-items: center;
   font-size: $fs-sm;
-  line-height: 18px;
+  font-weight: 500;
+  line-height: 1.125rem;
   letter-spacing: 0.02em;
-  color: $accent-violet;
-  background: transparent;
-  border: 1px solid $accent-violet;
-  border-radius: 6px;
-  padding: 5px 12px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, #fff);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, #fff);
+  border-radius: 999px;
+  padding: 0.3125rem 0.875rem;
 }
 
 @media (max-width: $bp-md) {
   .inner {
-    padding: 32px 20px;
+    padding: 3.5rem 1.5rem;
   }
 
   .item {
-    padding: 18px 20px;
+    padding: 1.125rem 1.25rem;
   }
 }
 
 @media (max-width: $bp-sm) {
   .inner {
-    padding: 24px 16px;
+    padding: 2.75rem 1rem;
   }
 
   .title {

@@ -9,13 +9,13 @@
   --text-secondary: #666;
   --text-tertiary: #555;
   --bg-secondary: #111;
-  --border-radius-lg: 8px;
+  --border-radius-lg: 0.5rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 0.625rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -42,7 +42,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--border-light);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: 2px solid var(--background);
 }
 
@@ -71,7 +71,7 @@ button {
 @keyframes revealText {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(0.625rem);
   }
   to {
     opacity: 1;

@@ -1,14 +1,16 @@
 @use '@/styles/variables' as *;
 
 .footer {
-  padding: 24px 32px;
+  padding: 1.5rem 2rem;
+  background-color: $bg-section;
+  border-top: 1px solid #eceef2;
 }
 
 .text {
   font-family: var(--font-sans);
   font-size: $fs-md;
-  color: $fg-tertiary;
+  color: #5b6472;
   line-height: 1.6;
-  margin: 0 0 16px;
+  margin: 0 0 1rem;
   text-align: center;
 }

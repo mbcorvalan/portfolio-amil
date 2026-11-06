@@ -4,20 +4,20 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  margin-top: 22px;
+  gap: 0.75rem;
+  margin-top: 1.375rem;
 }
 
 .ctaButton {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 11px 18px;
-  border-radius: 8px;
+  gap: 0.5rem;
+  padding: 0.6875rem 1.125rem;
+  border-radius: 0.5rem;
   border: 1px solid transparent;
   font-size: $fs-base;
   font-weight: 500;
-  line-height: 16.2px;
+  line-height: 1.0125rem;
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: background-color 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
@@ -67,7 +67,7 @@
 .ctaLink {
   display: inline-flex;
   align-items: center;
-  padding: 4px 2px;
+  padding: 0.25rem 2px;
   border-bottom: 1px solid transparent;
   font-size: $fs-md;
   font-weight: 500;
@@ -90,7 +90,7 @@
 .discoverWrapper {
   display: flex;
   justify-content: center;
-  padding: 20px 0 8px;
+  padding: 1.25rem 0 0.5rem;
 }
 
 .discoverBtn {
@@ -124,6 +124,6 @@
 
   .ctaLink {
     justify-content: center;
-    padding: 8px 2px;
+    padding: 0.5rem 2px;
   }
 }

@@ -8,7 +8,7 @@ export const uiStrings = {
   ctaBlog: 'Blog',
   keyResponsibilities: 'Show more responsibilities',
   youtubeChannel: 'YouTube Channel',
-  sectionProjects: 'Personal Projects',
+  sectionProjects: 'Freelance Projects',
   navProjects: 'Projects',
   projectsIntro: 'Things I\'m building on my own time.',
   ctaViewOnGithub: 'View on GitHub',

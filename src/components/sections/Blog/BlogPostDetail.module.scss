@@ -1,28 +1,28 @@
 @use '@/styles/variables' as *;
 
 .headerWrap {
-  padding: 20px 36px 0;
+  padding: 1.25rem 2.25rem 0;
 }
 
 .section {
-  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
 }
 
 .inner {
   max-width: $content-max;
   margin: 0 auto;
-  padding: 40px 32px;
+  padding: 2.5rem 2rem;
 }
 
 .back {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 2.25rem;
+  height: 2.25rem;
   color: $fg-tertiary;
   text-decoration: none;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   border: 1px solid $border-light;
   border-radius: 50%;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
@@ -35,17 +35,17 @@
 
   &:focus-visible {
     outline: 2px solid rgba(255, 255, 255, 0.4);
-    outline-offset: 3px;
+    outline-offset: 0.1875rem;
   }
 }
 
 .meta {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   font-size: $fs-sm;
   color: $fg-subtle;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -53,21 +53,21 @@
   font-weight: 600;
   color: $fg-bright;
   line-height: 1.25;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
 }
 
 .dek {
   font-size: $fs-lg;
   line-height: 1.5;
   color: $fg-tertiary;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .tags {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 .tag {
@@ -76,14 +76,14 @@
   text-transform: uppercase;
   color: $fg-tertiary;
   border: 1px solid $border-light;
-  border-radius: 4px;
-  padding: 3px 8px;
+  border-radius: 0.25rem;
+  padding: 0.1875rem 0.5rem;
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 1.125rem;
 }
 
 .paragraph {
@@ -97,8 +97,8 @@
   font-weight: 700;
   color: $fg-bright;
   letter-spacing: -0.01em;
-  margin-top: 16px;
-  padding-top: 28px;
+  margin-top: 1rem;
+  padding-top: 1.75rem;
   border-top: 1px solid $border;
 }
 
@@ -108,7 +108,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $fg-subtle;
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .note {
@@ -116,15 +116,15 @@
   font-style: italic;
   line-height: 1.7;
   color: $fg-tertiary;
-  padding-left: 14px;
+  padding-left: 0.875rem;
   border-left: 2px solid $border-light;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-left: 20px;
+  gap: 0.625rem;
+  padding-left: 1.25rem;
   margin: 0;
 }
 
@@ -140,12 +140,12 @@
   color: $fg-bright;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid $border-light;
-  border-radius: 4px;
-  padding: 1px 5px;
+  border-radius: 0.25rem;
+  padding: 1px 0.3125rem;
 }
 
 .figure {
-  margin: 8px 0;
+  margin: 0.5rem 0;
 }
 
 .imagePlaceholder {
@@ -169,7 +169,7 @@
 }
 
 .caption {
-  margin-top: 8px;
+  margin-top: 0.5rem;
   font-size: $fs-sm;
   color: $fg-subtle;
   text-align: center;
@@ -177,21 +177,21 @@
 
 @media (max-width: $bp-md) {
   .headerWrap {
-    padding: 20px 24px 0;
+    padding: 1.25rem 1.5rem 0;
   }
 
   .inner {
-    padding: 32px 20px;
+    padding: 2rem 1.25rem;
   }
 }
 
 @media (max-width: $bp-sm) {
   .headerWrap {
-    padding: 16px 16px 0;
+    padding: 1rem 1rem 0;
   }
 
   .inner {
-    padding: 24px 16px;
+    padding: 1.5rem 1rem;
   }
 
   .paragraph {

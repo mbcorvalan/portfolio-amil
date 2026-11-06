@@ -19,7 +19,7 @@ export interface Project {
   title: string;
   subtitle: string;
   description: string;
-  status: string;
+  status?: string;
   technologies: string[];
   link?: string;
   github?: string;

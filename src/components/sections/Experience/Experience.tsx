@@ -20,35 +20,40 @@ export const Experience: React.FC = () => {
             const isOpen = openId === exp.id;
             return (
               <li key={exp.id} className={styles.item}>
-                <div className={styles.meta}>
-                  <div className={styles.year}>{exp.period}</div>
-                  {exp.location && (
-                    <div className={styles.location}>{exp.location}</div>
-                  )}
-                </div>
-                <div className={styles.content}>
-                  <p className={styles.company}>{exp.company}</p>
-                  <p className={styles.role}>{exp.title}</p>
-                  {exp.summary && (
-                    <p className={styles.summary}>{exp.summary}</p>
-                  )}
-                  <button
-                    type="button"
-                    className={styles.toggle}
-                    aria-expanded={isOpen}
-                    aria-controls={`responsibilities-${exp.id}`}
-                    onClick={() => setOpenId(isOpen ? null : exp.id)}
-                  >
-                    <span className={styles.toggleLabel}>{t.keyResponsibilities}</span>
-                    <span className={styles.toggleIcon} aria-hidden="true">{isOpen ? '−' : '+'}</span>
-                  </button>
-                  {isOpen && (
-                    <ul id={`responsibilities-${exp.id}`} className={styles.descList}>
-                      {exp.bullets.map((bullet, i) => (
-                        <li key={i} className={styles.desc}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
+                <p className={styles.year}>{exp.period}</p>
+                <div className={styles.body}>
+                  <div className={styles.titleRow}>
+                    <p className={styles.role}>{exp.title}</p>
+                    <span className={styles.separator} aria-hidden="true">—</span>
+                    <p className={styles.company}>{exp.company}</p>
+                  </div>
+                  <div className={styles.content}>
+                    {exp.summary && (
+                      <p className={styles.summary}>{exp.summary}</p>
+                    )}
+                    {/* List renders above the toggle so the button stays below the revealed items */}
+                    <div
+                      id={`responsibilities-${exp.id}`}
+                      className={`${styles.panel} ${isOpen ? styles.panelOpen : ''}`}
+                      inert={!isOpen}
+                    >
+                      <ul className={styles.descList}>
+                        {exp.bullets.map((bullet, i) => (
+                          <li key={i} className={styles.desc}>{bullet}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <button
+                      type="button"
+                      className={styles.toggle}
+                      aria-expanded={isOpen}
+                      aria-controls={`responsibilities-${exp.id}`}
+                      onClick={() => setOpenId(isOpen ? null : exp.id)}
+                    >
+                      <span className={styles.toggleLabel}>{t.keyResponsibilities}</span>
+                      <span className={styles.toggleIcon} aria-hidden="true">{isOpen ? '−' : '+'}</span>
+                    </button>
+                  </div>
                 </div>
               </li>
             );
