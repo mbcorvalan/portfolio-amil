@@ -14,8 +14,8 @@ export const Contact: React.FC = () => {
       <div className={styles.inner}>
         <SectionLabel>{t.sectionContact}</SectionLabel>
         <div className={styles.row}>
-          <Link href="mailto:bcorvalan.amil@gmail.com" className={styles.link}>
-            bcorvalan.amil@gmail.com
+          <Link href="mailto:hola@bcorvalanamil.com" className={styles.link}>
+            hola@bcorvalanamil.com
           </Link>
           <Link
             href="https://www.linkedin.com/in/mbcorvalan/"
