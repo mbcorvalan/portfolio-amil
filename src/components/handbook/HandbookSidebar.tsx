@@ -121,6 +121,10 @@ export const HandbookSidebar: React.FC<HandbookSidebarProps> = ({ nav, title }) 
             ),
           )}
         </ul>
+        <p className={styles.sidebarFooter}>
+          These are study notes. They may contain errors or outdated information, so always check the
+          original sources.
+        </p>
       </nav>
     </aside>
   );

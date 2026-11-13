@@ -52,6 +52,29 @@ $shell-max: 90rem;
   display: none;
 }
 
+// The nav fills the sidebar height so the footer sits at the bottom when the
+// list is short, and right after the list when it is long.
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  padding: 2rem 0.75rem 0;
+  font-size: $fs-2xs;
+  line-height: 1.6;
+  color: $fg-tertiary;
+
+  &::before {
+    content: '';
+    display: block;
+    margin-bottom: 1rem;
+    border-top: 1px solid $border;
+  }
+}
+
 .sidebarEyebrow,
 .tocEyebrow {
   font-size: $fs-2xs;
@@ -402,7 +425,7 @@ $shell-max: 90rem;
     padding: 0.75rem 0 1rem;
 
     &[data-open] {
-      display: block;
+      display: flex;
     }
   }
 
