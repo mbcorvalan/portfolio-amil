@@ -1,6 +1,6 @@
 # Portfolio — Maria Belen Corvalan Amil
 
-Personal portfolio of Maria Belen Corvalan Amil, Senior Frontend Developer based in Buenos Aires, Argentina.
+Personal portfolio of Maria Belen Corvalan Amil, Senior Software Developer based in Buenos Aires, Argentina.
 
 ## Stack
 
