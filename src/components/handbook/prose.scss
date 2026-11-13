@@ -58,13 +58,11 @@ $header-h: 4rem; // keep in sync with Handbook.module.scss
 
     a {
       color: $accent-bright;
-      text-decoration: underline;
-      text-decoration-color: rgba(129, 140, 248, 0.35);
-      text-underline-offset: 0.2em;
-      transition: text-decoration-color 0.15s;
+      text-decoration: none;
+      transition: opacity 0.15s;
 
       &:hover {
-        text-decoration-color: $accent-bright;
+        opacity: 0.8;
       }
     }
 
