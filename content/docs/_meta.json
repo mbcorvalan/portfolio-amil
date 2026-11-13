@@ -1,0 +1,16 @@
+{
+  "groups": [
+    { "title": "Foundations", "parts": ["I"] },
+    { "title": "Building with Models", "parts": ["II"] },
+    { "title": "Orchestration", "parts": ["III"] },
+    { "title": "Production", "parts": ["IV"] },
+    { "title": "Retrieval and Knowledge", "parts": ["V"] },
+    { "title": "Agent Systems", "parts": ["VI"] },
+    { "title": "Model Context Protocol", "parts": ["VII"] },
+    { "title": "LLM Foundations and Application Design", "parts": ["VIII"] },
+    { "title": "Model Engineering and Production", "parts": ["IX"] },
+    { "title": "Security, Reliability, and Experience", "parts": ["X"] },
+    { "title": "Capstone Projects", "parts": ["Capstone", "Capstone (HireFlow)"], "localOnly": true },
+    { "title": "Reference", "parts": ["Appendix A"] }
+  ]
+}

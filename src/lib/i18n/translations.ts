@@ -6,6 +6,7 @@ export const uiStrings = {
   ctaDownloadResume: 'Download resume',
   ctaContactMe: 'Contact me',
   ctaBlog: 'Blog',
+  navHandbook: 'handbook ai',
   keyResponsibilities: 'Show more responsibilities',
   youtubeChannel: 'YouTube Channel',
   sectionProjects: 'Freelance Projects',

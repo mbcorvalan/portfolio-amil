@@ -25,7 +25,8 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'home' }) => {
         <nav className={styles.nav} aria-label="Main navigation">
           <Link href="#experience" className={styles.navLink}>{t.sectionExperience}</Link>
           <Link href="#projects" className={styles.navLink}>{t.navProjects}</Link>
-          <Link href="/blog" className={styles.navLink}>{t.ctaBlog}</Link>
+          {/* Blog hidden for now — restore: <Link href="/blog" className={styles.navLink}>{t.ctaBlog}</Link> */}
+          <Link href="/handbook" className={styles.navLink}>{t.navHandbook}</Link>
           <Link href="#contact" className={styles.navLink}>{t.sectionContact}</Link>
         </nav>
       )}
