@@ -110,13 +110,12 @@ def ask(question: str, session_context: str):
 
 | Model | Minimum cacheable prompt |
 |---|---|
-| Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, Claude Opus 5 | 512 tokens |
-| Claude Sonnet 5 | 1,024 tokens |
-| Claude Opus 4.8 | 1,024 tokens |
-| Claude Opus 4.7 | 4,096 tokens |
-| Claude Haiku 5.5 | Verify. Sources conflict (512 or 1,024). |
+| Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Haiku 5.5 | 512 tokens |
+| Claude Opus 4.8, Claude Sonnet 5, Claude Sonnet 4.6 | 1,024 tokens |
+| Claude Opus 4.7, Claude Mythos Preview | 2,048 tokens |
+| Claude Opus 4.6, Claude Opus 4.5, Claude Haiku 4.5 | 4,096 tokens |
 
-> Check the live table before you size a prefix. You can also set one top-level `cache_control` field. The system then moves the breakpoint to the last cacheable block. Block-level breakpoints give you finer control.
+Automatic caching is the simplest option. A single top-level `cache_control` field lets the system place the breakpoint on the last cacheable block and move it as the conversation grows. Explicit breakpoints on individual blocks give you more control over what is cached. Automatic caching uses one of the four breakpoint slots, and it is not available on Amazon Bedrock's `bedrock-runtime`, where you must use explicit breakpoints. Check the live table before you size a prefix.
 
 ## Batch processing
 

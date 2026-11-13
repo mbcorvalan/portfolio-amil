@@ -462,6 +462,13 @@ Points to notice:
 - A truncated answer is never returned as if it were complete.
 - Citation validity is necessary but not sufficient. A real citation can still support the wrong claim. Evaluation (below) checks that.
 
+### Native citations from the API
+
+When the API can return native citations, use them. The API parses the citations against your documents, so the pointers are valid, which solves the invented-source problem covered above. It does not solve the wrong-claim problem. A valid passage can still fail to support the sentence next to it. Keep an evaluation for citation accuracy (Chapter 6).
+
+Native citations cannot be combined with structured outputs. If your pipeline needs a schema, keep application-level citation IDs and validate them as shown in this section.
+
+
 ## Failure modes
 
 Each failure has a different cause and a different fix. Keep them separate when you debug.

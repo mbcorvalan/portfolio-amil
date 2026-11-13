@@ -76,6 +76,120 @@ Limits to plan for:
 
 Treat every image and every PDF as untrusted input. A screenshot or a scanned page can contain text that tries to instruct the model (Chapter 13).
 
+## Documents, citations, and code execution
+
+Three API features turn a document from a file you read into an input the model can use: PDF support, citations, and code execution. Each one has its own limits and costs. Check the current values before you design around them.
+
+### PDFs as document blocks
+
+Send a PDF as a `document` content block. The API converts each page to an image and extracts its text, then gives the model both. This is why charts, diagrams, and tables are visible to the model. It is also why a PDF costs more than its text.
+
+```python
+import base64
+from pathlib import Path
+
+import anthropic
+
+client = anthropic.Anthropic()
+MODEL = "claude-sonnet-5-5"  # check the models page before shipping
+
+
+def pdf_document(path: Path, title: str) -> dict:
+    data = base64.standard_b64encode(path.read_bytes()).decode("ascii")
+    return {
+        "type": "document",
+        "title": title,
+        "source": {"type": "base64", "media_type": "application/pdf", "data": data},
+    }
+
+
+response = client.messages.create(
+    model=MODEL,
+    max_tokens=800,
+    messages=[{
+        "role": "user",
+        "content": [
+            pdf_document(Path("q3-report.pdf"), "Q3 report"),
+            {"type": "text", "text": "Which region had the largest revenue decline? Give the figure."},
+        ],
+    }],
+)
+```
+
+Limits to plan for (verify before you ship):
+
+- **Request size:** 128 MB on the first-party API. The limit varies by platform.
+- **Pages:** 600 per request, or 100 when the context window is under 1M tokens.
+- **Format:** a standard PDF. Password-protected or encrypted files are not supported.
+- **Density:** pages with small fonts, many tables, or heavy graphics can fill the context window before you reach the page limit.
+
+Each page typically uses 1,500 to 3,000 text tokens, plus the image tokens for the page. Use token counting to estimate a specific file before you process a batch. For large or reused files, upload through the Files API and reference the `file_id`. That keeps request payloads small and lets later requests reuse the file.
+
+### Citations
+
+Enable citations on a document block, and the response carries pointers back to the source. For plain text, the pointer is a character range (`char_location`). For PDFs, it is a page range (`page_location`), with a 1-indexed start page and an exclusive end page.
+
+```python
+document = {
+    "type": "document",
+    "title": "Q3 report",
+    "source": {"type": "base64", "media_type": "application/pdf", "data": data},
+    "citations": {"enabled": True},
+}
+
+for block in response.content:
+    if block.type == "text" and block.citations:
+        for c in block.citations:
+            print(c.cited_text, c.document_title, getattr(c, "start_page_number", None))
+```
+
+Things to know:
+
+- `cited_text` does not count toward output tokens. When you send it back in later turns, it does not count toward input tokens either.
+- Citations cannot be combined with structured outputs. A request with both returns a 400 error. Choose one per request, or split the work into two calls (Chapter 4).
+- A citation is a pointer to a real passage. It is not proof that the passage supports the claim. Check the claim with an evaluation (Chapter 16).
+
+### Code execution
+
+The code execution tool lets Claude run Python, and Bash for file operations, in a sandbox. Use it when the answer needs computation, not only reading: statistics, tables, charts, or format conversion.
+
+```python
+response = client.messages.create(
+    model=MODEL,
+    max_tokens=4096,
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+    messages=[{
+        "role": "user",
+        "content": "Compute the mean and standard deviation of 1 to 10 with the code tool.",
+    }],
+)
+
+for block in response.content:
+    if block.type == "text":
+        print(block.text)
+    elif block.type == "server_tool_use":
+        print("ran:", block.name)  # for example, bash_code_execution
+```
+
+Sandbox facts (verify before you ship):
+
+- **No internet access** and **no package installation** at runtime. Only the pre-installed libraries are available, for example pandas, numpy, matplotlib, openpyxl, and pypdf.
+- **Resources:** 5 GiB of RAM, 5 GiB of disk, 1 CPU, and Python 3.11.
+- **Files:** access is limited to the workspace. Files written to the output directory come back with file IDs. Download them through the Files API.
+- **Containers:** each request gets a new container unless you pass a container ID back. Containers expire 30 days after creation, and an expired container cannot be reused.
+- **Data:** container data is retained for up to 30 days. The feature is not eligible for Zero Data Retention or HIPAA. Check with compliance before you use it on regulated data.
+- **Billing:** if the request includes the newer web search or web fetch tools, there is no charge beyond token costs. Otherwise, execution time is billed per container, with a 5-minute minimum per execution, 1,550 free hours per organization per month, and a price per hour after that. Check the price page before you estimate cost.
+
+The sandbox protects your systems. It does not check the answer. Validate the numbers that matter, as you would any model output.
+
+| Feature | Use it when | Avoid it when |
+|---|---|---|
+| PDF document blocks | The PDF has charts, tables, scans, or a visual layout | The PDF has a clean text layer and the text is enough. Extract the text instead |
+| Citations | Users must verify where an answer came from | The output must follow a strict schema (structured outputs conflict with citations) |
+| Code execution | The answer needs computation or a generated file | The task is a simple lookup, or the data cannot be retained by a third party |
+
+Every document and every file can carry instructions. Apply the rules from Chapter 13 before you pass any content to these features.
+
 ## Choosing the extraction path
 
 Vision is not always the best tool. A document pipeline usually follows this order:
